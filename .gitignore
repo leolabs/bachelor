@@ -2,6 +2,7 @@
 src/content.textbundle/*.tex
 src/content.textbundle/*.tex-e
 output/
+*.pdf
 
 ## Core latex/pdflatex auxiliary files:
 *.aux

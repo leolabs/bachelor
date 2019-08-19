@@ -33,7 +33,7 @@ cleanup() {
 
   # Remove LaTeX Output
   safe_cd "$TEMPLATE"
-  rm -f -- *.aux *.fdb_latexmk *.fls *.lof *.lot *.log *.out *.synctex.gz *.toc *.bcf *.blg *.dvi *.run.xml *.out.ps
+  rm -f -- *.pdf *.aux *.fdb_latexmk *.fls *.lof *.lot *.log *.out *.synctex.gz *.toc *.bcf *.blg *.dvi *.run.xml *.out.ps
 }
 
 # First, clean up
@@ -73,3 +73,4 @@ cp index.pdf /output/bachelors-thesis.pdf
 
 # Cleanup (again)
 blue_echo "Cleaning up..."
+cleanup
