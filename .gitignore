@@ -3,6 +3,7 @@ src/content.textbundle/*.tex
 src/content.textbundle/*.tex-e
 output/
 *.pdf
+*-converted.jpg
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
