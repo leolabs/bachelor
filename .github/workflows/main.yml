@@ -11,5 +11,7 @@ jobs:
     - uses: actions/checkout@v1
     - uses: docker://leolabs/pandoc-latex
     - uses: JasonEtco/upload-to-release@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         args: output/bachelors-thesis.pdf
