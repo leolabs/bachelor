@@ -1,6 +1,7 @@
 ## Custom
 src/content.textbundle/*.tex
 src/content.textbundle/*.tex-e
+output/
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
