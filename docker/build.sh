@@ -46,8 +46,8 @@ blue_echo "Building TeX from Markdown..."
 safe_cd "$TEXTBUNDLE"
 pandoc --filter pandoc-citeproc \
   --bibliography ../bibliography/bibliography.bib --biblatex \
+  --top-level-division=chapter \
   -o text.tex text.md
-  #--top-level-division=chapter \
 
 # Convert TIFF Images to JPG
 blue_echo "Converting images that are not compatible with pdfLaTeX..."
