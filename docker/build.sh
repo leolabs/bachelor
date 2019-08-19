@@ -1,6 +1,7 @@
 #!/bin/sh
 
-ROOT="$(pwd)/src"
+ROOT="$PWD/src"
+OUTPUT="$PWD/output"
 TEXTBUNDLE="$ROOT/content.textbundle"
 ASSETS="$TEXTBUNDLE/assets"
 TEMPLATE="$ROOT/template"
@@ -69,7 +70,8 @@ latexmk -pdf -f --interaction=batchmode index.tex || exit 1
 
 # Copy files
 blue_echo "Copying the result to output..."
-cp index.pdf /output/bachelors-thesis.pdf
+mkdir -p "$OUTPUT"
+cp index.pdf "$OUTPUT/bachelors-thesis.pdf"
 
 # Cleanup (again)
 blue_echo "Cleaning up..."

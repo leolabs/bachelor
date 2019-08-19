@@ -40,8 +40,8 @@ RUN tlmgr install biber latexmk varwidth logreq tabu geometry biblatex csquotes 
 COPY build.sh /build.sh
 RUN chmod +x build.sh
 
-ENTRYPOINT [ "./build.sh" ]
+ENTRYPOINT [ "/build.sh" ]
 
-WORKDIR /
+WORKDIR /github/workspace
 
-VOLUME ["/src", "/output"]
+VOLUME ["/github/workspace"]
