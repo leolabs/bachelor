@@ -1,0 +1,14 @@
+name: CI
+
+on: [push, release]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - uses: docker://leolabs/pandoc-latex
+    - uses: JasonEtco/upload-to-release@master
+      args: output/bachelors-thesis.pdf
