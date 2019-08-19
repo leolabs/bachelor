@@ -1,0 +1,167 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Beispiel für eine Bachelorarbeit mit FH Aachen FB 8
+% Titelblattstyles
+%
+%	Prof. Enning, 18.07.2013
+%   Überarbeitet, 17.06.2014
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%% Präambel %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass [
+% 	draft		% falls ohne Bilder gedruckt werden soll (Entwurf)
+	]{scrbook}	% KOMA Klasse für Bücher
+%
+\usepackage{fhacmb}	% Style-File für Titelblatt. Ggf. bei Enning holen
+%
+% Einstellen der Optionen für die KOMA Klasse
+\KOMAoptions{
+	parskip=true,		% Absätze mit Abstand
+	fontsize=12pt,		% Standardschriftgröße
+	toc=flat,		% Inhaltsverzeichnis ohne Einzüge
+	twoside=false,		% Einseitig setzen
+	numbers=nodotatend,	% Nummerierungen nicht mit Punkt abschließen
+% die folgenden Optionen nehmen die entsprechende Dinge ins Inhaltsverzeichnis auf
+% mit der bei texlive vorhandenen aktuellen Version von pdflatex funkioniert es nicht mehr
+% (bekannter Bug)
+	toc=bibliography,	% Literaturverzeichnis ins Inhaltsverzeichnis
+	toc=listof,		% Abbildung- und Tabellenverzeichnis ins Inhaltsverzeichnis
+%	toc=index,		% Stichwortverzeichnis ins Inhaltsverzeichnis
+	}
+%
+%%%%%% Immer benötigte Packages
+%
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=8cm,keepaspectratio}
+\usepackage[style=authoryear-comp,backend=biber,maxcitenames=1]{biblatex}
+\addbibresource{../bibliography/bibliography.bib}
+\usepackage[T1]{fontenc}		% sonst funktioniert die Silbentrennung bei Umlauten nicht
+\usepackage[utf8]{inputenc}	% Eingabedekodierung. Ermöglicht Umlaute. Achtung: Unbedingt mit Betreuer
+				% Verwendung der Umlaute-Eingabemethode absprechen. Im Zweifel \"O für Ö
+\usepackage{csquotes}
+\usepackage[ngerman]{babel}	% Silbentrennung und Sprachanpassung
+\usepackage{blindtext}		% Blindtext
+\usepackage[hidelinks]{hyperref}		% Sprungmarken, z.B. im Inhaltsverzeichnis auf Textpassagen
+\usepackage{textcomp}		% Sonst funktioniert z.B. \texteuro nicht
+\usepackage[automark]{scrpage2}	% Package zum Definieren der Kopf- und Fußzeilen
+\usepackage{amsmath}		% Muss sein
+\usepackage{mathrsfs} 	% Weitere Mathematik-Symbole, z.B. Laplace-L
+\usepackage{grffile}
+
+\usepackage{graphicx}		% Definiert o.a. \includegraphics
+\graphicspath{{../content.textbundle/}{.}}
+
+%%%%% Anpassung an Formatvorlagen des Fachbereichs
+
+\usepackage{helvet}		% Serifenlose Schrift ähnlich Arial
+\renewcommand{\familydefault}{\sfdefault}	% als Standardschrift serifenlose Schrift verwenden
+
+\usepackage{geometry} 		% Ränder direkt einstellen
+\geometry{a4paper, top=20mm, left=30mm, right=20mm, bottom=25mm} % nach Vorgabe
+\linespread{1.5} 		% Zeilenabstand nach Vorgabe
+
+\usepackage[font=small,labelfont=bf]{caption}  % customization of captions of floating environments such figure and table
+\DeclareCaptionLabelFormat{blank}{}
+
+\usepackage{chngcntr}		% Ändert Verhalten von Countern
+\counterwithout{figure}{section}	% Figure-Nummerierung nicht bei section-Wechsel zurücksetzen
+\renewcommand{\thefigure}{\thechapter.\arabic{figure}}	% im Stil 3.2
+
+\renewcommand{\thetable}{\thechapter.\arabic{table}}
+\renewcommand{\theequation}{\thechapter.\arabic{equation}}
+
+%%%% für das Erzeugen von Grafiken mit Zeichenbefehlen
+\usepackage{tikz}		% Grundpaket
+\usetikzlibrary{shapes,arrows}	% einige Symbolpackages
+\usepackage{tikz-cd}		% einige Symbolpackages
+
+%%%%%% Gegebenenfalls nützliche Zusatzpackages
+
+%\usepackage{blindtext}		% Blindtexte zum Ausprobieren von Formatierungen
+%\usepackage{color}		% Schriftfarben
+\usepackage{colortbl}		% für die Hintergrundfarbe von Tabellen
+%\usepackage{gensymb}		% Definiert Formelzeichen, die im math und im text-Modus gleich aussehen
+%\usepackage{wrapfig}		% Definiert die wrapfigure-Umgebung (Bild am Rand von Text umflossen)
+%\usepackage{pdfpages}		% Einbinden von pdf-Seiten
+%
+%\usepackage{booktabs} 		% Schöne Tabellen
+%\usepackage{tabu}	 	% Sehr einfach Tabellen gestalten
+%\usepackage{array} 		% Erweiterung der Tabellenumgebung, neue Spaltentypen
+\usepackage{paralist}		% Weitere Nummeriungsoptionen, z.b. alphabetisch für enumerate/itemize
+%\usepackage{verbatim}		% Verbesserte verbatim-Umgebung (z.b. Programm-Listings)
+%\usepackage{subfig}		% Unterfigures mit eigenen Bildunterschriften
+%
+
+%%%%%% Sammelsurium
+%
+%\renewcommand{\labelitemii}{$\circ$} % Bullets für itemize-Listen
+%
+%%%%%%%%%%  Angaben für Titelseite %%%%%%%%%%%%%%%%%%%%%%
+%
+\input{titelangaben}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+\newcounter{savepage}
+\begin{document}
+% Einige Anpassungen müssen nach \begin{document} stehen !!
+\renewcaptionname{ngerman}{\figurename}{Abb.}
+\renewcaptionname{ngerman}{\tablename}{Tabelle}
+\renewcaptionname{ngerman}{\contentsname}{Inhalt}% Inhalt statt Inhaltsverzeichnis
+
+%\crefname{figure}{Abb.}{Abb.}
+%\crefname{equation}{Gleichung}{Gleichung}
+%\crefname{table}{Tabelle}{Tabelle}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Titel im FH Style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fhacmbtitle{\includegraphics[height=4cm]{fh_logo.png}}{5pt}{5pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Erklärung / Geheimhaltung
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\frontmatter 	% Wenn der Hauptteil mit Seite 1 beginnen soll
+\pagestyle{plain}
+\input{erklaerung}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inhaltsverzeichnis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{gobble}
+\tableofcontents
+
+\listoffigures
+\pagenumbering{Roman}
+\setcounter{page}{1}
+\listoftables
+\setcounter{savepage}{\arabic{page}}
+
+\mainmatter	% Wenn der Hauptteil mit Seite 1 beginnen soll
+\pagestyle{plain}
+%%%%%%%%%%%%%%% Anpassung des Seitenstils an FH-Layoutvorschrift %%%%%%%%%%%%
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter\hspace{1cm}#1}{}}	% Kapitel für Headerzeile neu definieren (ohne Nummer)
+\chead{}		% Header Mitte löschen
+\ihead{\leftmark}	% Kapitelbezeichnung links setzen
+\renewcommand{\headfont}{\bfseries}	% Bold-Font für Headerzeile verwenden
+\setheadsepline{0.5pt}
+
+% \input{aufgabenstellung}
+\input{../content.textbundle/text.tex}
+
+\printbibliography
+
+\appendix
+% \input{anhang}
+
+\end{document}

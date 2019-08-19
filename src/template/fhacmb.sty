@@ -1,0 +1,172 @@
+%%%%  Package fhacmb.sty   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Erzeugt eine Titelseite für eine Abschlussarbeit nach dem CD des FH 8
+% Voraussetzung: Documentclass scrbook (KOMA-Klasse)
+%
+% Verwendung: Felder mittels der Befehle definieren, z.B. \titel{irgendwas}
+% Befehl \fhacmbtitle{logo}{abstandx}{abstandy} aufrufen
+% logo: Anweisung zum Zeichnen eines Logos, z.B. \includegraphics[height=4cm]{fh_logo}
+% abstandx: Abstand zwischen rechtem Papierrand und Logo
+% abstandy: Abstand zwischen oberem Papierrand und Logo
+%
+% Nicht definierte Felder tragen als Inhalt den Befehlsnamen
+% Manche Felder können leer bleiben \cobetreuer{}
+%
+% Autor: Prof. Enning, 17.07.2013
+%
+% Bitte beachten: Wenn Felder vor \begin{document} definiert werden, müssen Umlaute vollständig umschrieben werden
+% Shortcuts aus babel können noch nicht verwendet werden. Also \"A für ein Ä
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\RequirePackage{color}				% Für farbigen Text
+\RequirePackage{microtype}			% um die 9pt Schrift etwas breiter laufen lassen zu können
+\RequirePackage{graphicx}			% für \includegraphics
+\RequirePackage{ifthen}				% für \ifthenelse
+\RequirePackage{tabu}				% für die einfache Tabellengestaltung
+\RequirePackage{helvet}				% Arial-ähnliche Schrift
+\RequirePackage{picture}				% zum Setzen des Logos
+\RequirePackage{geometry}
+%\RequirePackage{mmout}				% für Kontrollausgaben der Maße
+
+
+\geometry{a4paper, top=20mm, left=30mm, right=20mm, bottom=25mm}  % Ränder explizit einstellen
+
+% FH-Mint definieren
+\definecolor{fh-mint}{RGB}{0,177,172}
+
+% Textstyles für das Deckblatt
+\def\hlmint{\fontfamily{phv}\fontsize{19pt}{19pt}\fontseries{b}\color{fh-mint}\selectfont}
+\def\hlAbold{\fontfamily{phv}\fontsize{14pt}{30pt}\fontseries{b}\selectfont}
+\def\hlAnormal{\fontfamily{phv}\fontsize{14pt}{14pt}\selectfont}
+
+% Variable und Kommando für den Typ der Arbeit
+\def\@arbeitstyp{arbeitstyp}
+\newcommand\arbeitstyp[1]{\gdef\@arbeitstyp{#1}}
+
+% Variable und Kommando für Fachbereich
+\def\@fachbereich{fachbereich}
+\newcommand\fachbereich[1]{\gdef\@fachbereich{#1}}
+
+% Variable und Kommando für Studiengang
+\def\@studiengang{studiengang}
+\newcommand\studiengang[1]{\gdef\@studiengang{#1}}
+
+% Variable und Kommando für Matrikelnummer
+\def\@matrnr{matrnr}
+\newcommand\matrnr[1]{\gdef\@matrnr{#1}}
+
+% Variable und Kommando für Vertiefungsrichtung
+\def\@vertiefung{vertiefung}
+\newcommand\vertiefung[1]{\gdef\@vertiefung{#1}}
+
+% Variable und Kommando für Autor
+\def\@autor{autor}
+\newcommand\autor[1]{\gdef\@autor{#1}}
+
+% Variable und Kommando für Titel
+\def\@titel{titel}
+\newcommand\titel[1]{\gdef\@titel{#1}}
+
+% Variable und Kommando für Betreuer
+\def\@betreuer{betreuer}
+\newcommand\betreuer[1]{\gdef\@betreuer{#1}}
+
+% Variable und Kommando für Co-Betreuer
+\def\@cobetreuer{cobetreuer}
+\newcommand\cobetreuer[1]{\gdef\@cobetreuer{#1}}
+
+% Variable und Kommando für externen Betreuer
+\def\@extbetreuer{extbetreuer}
+\newcommand\extbetreuer[1]{\gdef\@extbetreuer{#1}}
+
+% Variable und Kommando für Datum
+\def\@datum{datum}
+\newcommand\datum[1]{\gdef\@datum{#1}}
+
+% Variable und Kommando für Danksagung und Geheimhaltung
+\def\@dank{dank}
+\newcommand\dank[1]{\gdef\@dank{#1}}
+
+% Hier wird der Befehl definiert, der die Arbeit macht
+% Beispiel für Aufruf:
+% \fhacmbtitle{\includegraphics[height=4cm]{fh_logo}}{5pt}{5pt}
+\newcommand{\fhacmbtitle}[3]{
+	\begin{titlepage}
+	% Berechnungen für das Positionieren des Logos
+	% Variablendeklarationen
+	\newskip\@logobreite	% Breite des Logos
+	\newskip\@logohoehe	% Höhe des Logos
+	\newskip\@koordx		% Abstand vom linken Rand
+	\newskip\@koordy		% Abstand vom oberen Rand
+	\newskip\@offsx		% Offsetx des Picture-Koordinatensystems
+	\newskip\@offsy		% Offsety des Picture-Koordinatensystems
+	%
+	\def\@xcorr{#2}     	% Abstand des Logos vom rechten Rand
+	\def\@ycorr{#3}		% Abstand des Logos vom oberen Rand
+	\def\@logo{#1}		% Zeichenanweisung für Logo als benannte Variable
+	% Größe des Logos ermitteln und speichern
+	\settowidth{\@logobreite}{\@logo}
+	\settoheight{\@logohoehe}{\@logo}
+	% Offsets des Koordinatensystems für ganzes Papierformat
+	% in X-Richtung
+	\@offsx=1in		% 1 inch (Standardrand, Systemkonstante)
+	\advance\@offsx by \oddsidemargin		% Rand abziehen (Logo nur auf ungerade Seite)
+	% in Y-Richtung
+	\@offsy=0in		% Standardrand offenbar Null ???
+	\advance\@offsy by \topmargin		% Rand abziehen
+	% x-Koordinate für Logo berechnen
+	\@koordx=\paperwidth					% initialisieren mit Papierbreite
+	\advance\@koordx by -\@logobreite 	% davon Logobreite
+	\advance\@koordx by -\@xcorr 		% und gewünschten Abstand abziehen
+	% y-Koordinate für Logo berechnen
+	\@koordy=0pt			% mit 0 initialisieren (oben)
+	\advance\@koordy by \@ycorr 			% gewünschten Abstand dazuaddieren
+	% picture-Umgebung am oberen linken Blattrand ausrichten
+	\begin{picture}(0pt,0pt)(\@offsx,-\@offsy)
+	% Logo zeichnen
+	\put(\@koordx,-\@koordy){\@logo}
+	\end{picture}
+	
+	% Kontrollausgaben der Maße. Erfordert selbstgeschriebenes Package mmout.sty
+	%offsx=\MM{\@offsx}\\
+	%offsy=\MM{\@offsy}\\
+	%koordx=\MM{\@koordx}\\
+	%koordy=\MM{\@koordy}\\
+	%
+	% 9 pt Helvetica (=phv) auswählen
+	\fontfamily{phv}\fontsize{9pt}{9pt}\selectfont
+	\vspace{25mm}
+	% Mintfarbenes fettes "FH Aachen"
+	{\hlmint
+	FH Aachen
+	}\par
+	{\hlAbold
+	Fachbereich \@fachbereich
+	}\par
+	{\hlAnormal
+	Studiengang \@studiengang
+	}\par
+	\vspace{20mm}
+	\@arbeitstyp\par
+	{\hlAbold
+	\@titel
+	}\par
+	\vspace{15mm}
+	\tabulinesep=3mm
+	\begin{tabu}{X[1]X[2]}
+	\textls{vorgelegt von} & {\hlAbold \@autor}\\[2mm]
+	 & \textls{Matrikel-Nr.} \textbf{\@matrnr}\\[10mm]
+	% Zeile Referent nur, wenn Angabe vorhanden
+	\ifthenelse{\equal{\@betreuer}{}}{}{
+	\textls{Referent:} & \@betreuer\\
+	}
+	\ifthenelse{\equal{\@datum}{}}{}{
+	\textls{Datum:} & \@datum\\
+	}
+	\end{tabu}
+	\vfill
+	\@dank
+	\end{titlepage}
+	}

@@ -1,3 +1,7 @@
+## Custom
+src/content.textbundle/*.tex
+src/content.textbundle/*.tex-e
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
