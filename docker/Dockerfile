@@ -5,8 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
 ENV HOME /
 
-RUN apt-get update && \
-  apt-get install -y pandoc pandoc-citeproc imagemagick
+RUN apt-get update && apt-get install -y imagemagick
 
 # needed for basic build rules
 RUN apt-get install -y software-properties-common
@@ -14,8 +13,7 @@ RUN apt-get install -y software-properties-common
 # needed for asymptote to run
 RUN apt-get install -y freeglut3 libglu1 libosmesa6 ghostscript
 
-RUN apt-get update -q \
-  && apt-get install -qy build-essential wget libfontconfig1 \
+RUN apt-get install -qy build-essential wget libfontconfig1 \
   && rm -rf /var/lib/apt/lists/*
 
 # Install TexLive with scheme-medium
@@ -31,9 +29,19 @@ ENV TEXLIVE_DIR="/usr/local/texlive/2019"
 ENV TEXLIVE_BIN="${TEXLIVE_DIR}/bin/x86_64-linux"
 ENV PATH="${TEXLIVE_BIN}:${PATH}"
 
-# ghostscript links to export (https://packages.debian.org/jessie/amd64/ghostscript/filelist)
-RUN ln -s /usr/bin/dvipdf /usr/bin/eps2eps /usr/bin/font2c /usr/bin/ghostscript /usr/bin/gs /usr/bin/gsbj /usr/bin/gsdj /usr/bin/gsdj500 /usr/bin/gslj /usr/bin/gslp /usr/bin/gsnd /usr/bin/pdf2dsc/usr/bin/pdf2ps /usr/bin/pdfopt /usr/bin/pf2afm /usr/bin/pfbtopfa /usr/bin/pphs /usr/bin/printafm /usr/bin/ps2ascii /usr/bin/ps2epsi /usr/bin/ps2pdf /usr/bin/ps2pdf12 /usr/bin/ps2pdf13 /usr/bin/ps2pdf14 /usr/bin/ps2pdfwr /usr/bin/ps2ps /usr/bin/ps2ps2 /usr/bin/ps2txt /usr/bin/wftopfa "${TEXLIVE_BIN}"
+# Install Pandoc
+RUN wget https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-1-amd64.deb && \
+  dpkg -i pandoc-2.7.3-1-amd64.deb && rm pandoc-2.7.3-1-amd64.deb
 
+# ghostscript links to export (https://packages.debian.org/jessie/amd64/ghostscript/filelist)
+RUN ln -s /usr/bin/dvipdf /usr/bin/eps2eps /usr/bin/font2c /usr/bin/ghostscript \
+  /usr/bin/gs /usr/bin/gsbj /usr/bin/gsdj /usr/bin/gsdj500 /usr/bin/gslj /usr/bin/gslp \
+  /usr/bin/gsnd /usr/bin/pdf2dsc/usr/bin/pdf2ps /usr/bin/pdfopt /usr/bin/pf2afm \
+  /usr/bin/pfbtopfa /usr/bin/pphs /usr/bin/printafm /usr/bin/ps2ascii /usr/bin/ps2epsi \
+  /usr/bin/ps2pdf /usr/bin/ps2pdf12 /usr/bin/ps2pdf13 /usr/bin/ps2pdf14 /usr/bin/ps2pdfwr \
+  /usr/bin/ps2ps /usr/bin/ps2ps2 /usr/bin/ps2txt /usr/bin/wftopfa "${TEXLIVE_BIN}"
+
+# Install required LaTeX packages
 RUN tlmgr install biber latexmk varwidth logreq tabu geometry biblatex csquotes \
   blindtext chngcntr tikz-cd blindtext wrapfig tabu paralist
 
