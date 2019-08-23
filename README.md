@@ -1,5 +1,8 @@
-# bachelor
-My Bachelor's Thesis
+# Component Sprints: Development of a Novel Approach to Optimize the Transition from Prototype to MVP
+
+[Compiled PDFs](https://github.com/leolabs/bachelor/releases/latest) | [Raw Markdown](https://github.com/leolabs/bachelor/blob/master/src/content.textbundle/text.md)
+
+This is my Bachelor's thesis, written in German. I may provide a translated version once the thesis is finished.
 
 ## Compiling The Thesis
 
