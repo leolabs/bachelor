@@ -48,11 +48,11 @@ Ein normaler Zyklus in der heutigen Entwicklung von Apps und Websites kann in vi
 
 Bei der Entwicklung von Apps ist es normalerweise notwendig, diesen Zyklus mehrere Male zu durchlaufen, um eine optimale Version zu erhalten. Dabei ist vor allem der Build-Schritt zeitaufwändig. Wenn der Launch nicht erfolgreich ist, wurden diese Ressourcen verschwendet.
 
-![Design Sprint Zyklus \[@googleventures\]](assets/DraggedImage.tiff)
+![Design Sprint Zyklus \[@googleventures\]](assets/Design%20Sprint%20Cycle.jpg)
 
 Der Design Sprint ist ein Ansatz, der diesen Zyklus optimiert. Hierbei werden die Build- und Launch-Schritte durch Prototyping und User Testing ersetzt, sodass User Feedback schneller gesammelt werden kann.
 
-![Struktur des gesamten Design Sprints \[@knapp2016, S. 17\]](assets/DraggedImage-1.tiff)
+![Struktur des gesamten Design Sprints \[@knapp2016, S. 17\]](assets/Design%20Sprint%20Structure.jpg)
 
 Ein Design Sprint dauert in der Regel fünf Tage – Montag bis Freitag – und wird vor Ort mit einem interdisziplinären Team von 4-7 Personen und einem Moderator durchgeführt.  Die Tage sind zeitlich fest strukturiert und jegliche Form von Ablenkung, wie z.B. Handys oder Laptops, ist nicht erlaubt. Ziel dieser Maßnahmen ist es, dass sich das Team fokussiert mit den Aufgaben auseinandersetzen kann [@knapp2016, S. 41]. Gesammelte Informationen werden auf Post-its festgehalten, sodass sie für jedes Teammitglied jederzeit sichtbar sind [@knapp2016, p. 20].
 
@@ -64,8 +64,7 @@ Nachmittags werden sogenannte Experteninterviews durchgeführt. Ziel dieser Inte
 
 Am Dienstag sucht das Team online nach Konzepten, Komponenten und anderen Beispielen, die im Kontext der am Montag definierten Fragen und Ziele relevant sein könnten und präsentiert diese kurz. Für jede Komponente wird ein Post-it erstellt [@knapp2016, S. 98-100].
 
-![](assets/DraggedImage-1.png)
-[@knapp2016, S. 109]
+![Struktur des Dienstages \[@knapp2016, S. 109\]](assets/DraggedImage-1.png)
 
 Basierend auf diesen Ideen werden nun von allen Teammitgliedern Skizzen und Notizen angelegt. Diese werden über weitere Übungen zu einem Solution Sketch pro Person ausgearbeitet. Diese Sketches bilden in maximal 3 Schritten detailliert die Interaktion der Nutzer mit dem Produkt ab und bleiben den anderen Teammitgliedern gegenüber bis zum nächsten Tag versteckt [@knapp2016, S. 114-118].
 
@@ -73,7 +72,7 @@ Am Mittwoch entscheidet sich das Team für den besten Solution Sketch. Diese Ent
 
 Im ersten Schritt werden die Solution Sketches, die am Vortag erstellt wurden, aufgedeckt und nebeneinander aufgehangen. Die Sketches sind anonym, um eventuellen persönlichen Einflüssen entgegenzuwirken [@knapp2016, S. 132].
 
-![Ergebnis der Heat map Übung](assets/heat-map.png)
+![Ergebnis der Heat Map Übung](assets/heat-map.png)
 
 Darauf folgend markiert jedes Teammitglied auf jedem Solution Sketch mit Klebepunkten interessante Konzepte und Ideen. Fragen und Anmerkungen können per Post-it hinzugefügt werden. Dieser Schritt wird in Stille durchgeführt und gibt dem Team einen guten Überblick über interessante Bereiche in den Sketches [@knapp2016, S. 132-135].
 
@@ -93,9 +92,7 @@ Die Person, die am nächsten Tag die Interviews mit Testnutzern durchführen wir
 
 Am Freitag wird der Prototyp an fünf Nutzern getestet. Nach einer kurzen Einleitung und generellen Fragen zum Nutzer wir dieser durch den Prototypen geführt.  Der Interviewer versichert den Nutzern dabei, dass nicht sie, sondern das Produkt, getestet werden. Sie können daher nichts falsch machen und es ist in Ordnung, wenn sie eine Aufgabe nicht verstehen oder ausführen können.
 
-![](assets/DraggedImage-2.png)
-
-[@knapp2016, S. 174]
+![Aufbau der Interviews \[@knapp2016, S. 174\]](assets/DraggedImage-2.png)
 
 Interviewer und Testnutzer sitzen beim Interview zu zweit in einem Raum. Das Gespräch wird per Video an den Rest des Sprint-Teams übertragen, der in einem anderen Raum sitzt. Diese Personen machen sich während des Interviews in stiller Einzelarbeit auf Post-its Notizen zu dem Feedback des Testnutzers [@knapp2016].
 
@@ -115,8 +112,7 @@ Im Kontext der Softwareentwicklung lässt sich Prototyping grob in drei Kategori
 
 Der Prototyping-Schritt in Design Sprints ist ein Rapid Throwaway Prototyping oder kurz Throwaway Prototyping, das sich dem erforschenden Prototyping unterordnen lässt. Bei diesem Ansatz werden Prototypen mit Fokus auf Geschwindigkeit entwickelt. Die Qualität des Programmcodes und die Sorgfältigkeit der Entwicklung sind dabei nicht wichtig, da der Prototyp nach der Evaluation nicht weiterentwickelt, sondern verworfen wird [@crinnion1992, S. 18]. 
 
-![](assets/DraggedImage-4.png)
-[@knapp2016]
+![\[@knapp2016\]](assets/DraggedImage-4.png)
 
 Durch die Geschwindigkeit der Entwicklung fällt es dem Team meist leichter, Ideen zu verwerfen, da es so noch nicht zu viel Zeit in die Entwicklung dieser investiert hat [@knapp2016]. 
 
@@ -132,8 +128,6 @@ Die Definition von “Minimum” im Kontext des MVP ist laut Ries nicht festgele
 
 Ries’ Definition hat aktuell jedoch die größte Reichweite. Die meisten Definitionen bauen entweder auf seiner Definition oder auf der Definition von Steve Blank auf [@lenarduzzi2016, S. 119].
 
-
-## Design Systems
 
 ## Atomic Design
 
@@ -163,6 +157,16 @@ Benutzerinterfaces, die auf dieses System setzen, sehen meist einheitlicher aus 
 
 Frost schlägt in seinem Buch vor, die entwickelten Komponenten in einer Komponentenbibliothek zu sammeln, die direkt mit dem fertigen Produkt verbunden ist, sodass die dort enthaltenen Komponenten immer den aktuellen Zustand der Website abbilden. So werden in Zukunft Änderungen an den Komponenten direkt auf das Produkt angewendet und es kommt nicht zu unerwarteten Unterschieden zwischen Design und Code [@frost2016, K. 3].
 
+
+## Design Systems
+
+Design Systems ist ein von Alla Kholmatova entwickeltes Konzept und gleichnamiges Buch, das 2017 veröffentlicht wurde. Kholmatova beschreibt Design Systems als “[…] a set of connected patterns and shared practices, coherently organized to serve the purposes of a digital product”[^5] [@kholmatova2017, Introduction].
+
+Ähnlich wie beim Atomic Design empfiehlt Kholmatova Unternehmen, eine Bibliothek für Muster, hier Pattern Library, anzulegen und zu pflegen. Sie unterscheidet bei diesen Patterns zwischen funktionalen Mustern, die das Verhalten und das Layout bestimmter Komponenten definieren und Wahrnehmungsmustern, die beispielsweise die Ästhetik und das Branding bestimmen [@kholmatova2017, Terminology].
+
+Anders als Frost in seinem Atomic Design Ansatz legt Kholmatova in ihrem Konzept keine feste Hierarchie für die Komponenten fest und unterscheidet explizit zwischen der Pattern Library und dem Design System selbst. Ihrer Aussage nach hat eine gute Pattern Library keinen Wert, wenn sie im Team nicht richtig eingesetzt wird [@kholmatova2017, K. 1].
+
+Einem guten Design System liegen stabile Design Prinzipien zugrunde. 
 
 ## Rolle des Component Sprints
 
@@ -199,3 +203,5 @@ Frost schlägt in seinem Buch vor, die entwickelten Komponenten in einer Kompone
 [^3]:	Übersetzt: “einzigartiges Produkt, das den Return on Risk sowohl für den Lieferanten als auch für den Kunden maximiert”
 
 [^4]:	Übersetzt: “Kundenentwicklungs-Taktik, um technische Verschwendung zu reduzieren und das Produkt schnellstmöglich in die Hände von Earlyvangelists zu bekommen”
+
+[^5]:	Übersetzt: Eine Reihe von miteinander verbundenen Mustern und gemeinsamen Praktiken, die einheitlich organisiert sind, um den Zwecken eines digitalen Produkts zu dienen
