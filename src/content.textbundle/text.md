@@ -18,8 +18,6 @@ Nach einem erfolgreichen Design Sprint entwickeln Firmen meist auf Basis des dor
 
 Der in dieser Bachelorarbeit ausgearbeitete Sprint, den ich Component Sprint nenne, soll Entwicklern die Entwicklung des MVP vereinfachen, indem sie bereits alle nötigen UI-Komponenten in Form einer Pattern Library zur Verfügung gestellt bekommen. So können sie sich bei der Entwicklung des MVP mehr auf die Implementierung der Logik konzentrieren.
 
-Ich möchte den Component Sprint nach einer festen Struktur aufbauen, sodass er – wie ein Design Sprint – in einer Woche zuverlässig wertvolle Ergebnisse liefert.
-
 # Vorgehen
 
 Um das Konzept für Component Sprints zu entwickeln, werde ich zuerst bestehende Grundlagen erörtern und relevante Konzepte und Frameworks vorstellen. 
@@ -186,7 +184,28 @@ Ein Component Sprint sollte zwischen einem Design Sprint und der Entwicklung des
 
 # Ausarbeitung des Konzepts für Component Sprints
 
-Component Sprints 
+Das Ziel eines Component Sprints ist die Erstellung eines Design Systems für ein Produkt. Damit ein Component Sprint in einem festen Zeitraum zuverlässig wertvolle Ergebnisse liefert, sollte er einer festen Struktur folgen, ähnlich wie es bei Design Sprints der Fall ist.
+
+Angelehnt an den Zeitrahmen von Design Sprints sollte ein Component Sprint in einem Zeitraum von vier bis fünf Tagen erfolgen. Aus persönlicher Erfahrung als Entwickler dürfte dieser Zeitraum für die Implementierung der Pattern Library ausreichen. Diese Hypothese wird im praktischen Test des Component Sprints überprüft.
+
+Strukturell orientiert sich der Component Sprint an einem Hybrid aus Atomic Design und Design Systems. Die Komponenten der Pattern Library sind in Atome, Moleküle und Templates unterteilt, wobei ein Molekül ausschließlich aus Atomen und nicht aus anderen Molekülen bestehen darf um die Komplexität der Struktur zu limitieren. Design Systems schließt die Unterteilung der Komponenten nicht explizit aus und die Hierarchie soll Entwicklern während des Sprints helfen, die einzelnen Komponenten zu priorisieren, sodass keine Abhängigkeitsprobleme entstehen.
+
+Um einem Unternehmen nachhaltig Wert zu liefern sollte das Ergebnis eines Component Sprints gut dokumentiert sein und seitens des Unternehmens einfach genutzt und um neue Komponenten erweitert werden können.  Um dies zu erreichen, sollte das Sprint Team mindestens einen Mitarbeiter aus dem Unternehmen enthalten, der aktiv an der Entwicklung der Komponenten teilnimmt und dabei lernt, wie die Pattern Library aufgebaut ist. Dieses Wissen kann er nach dem Sprint an sein Team weitergeben.
+
+Das Sprint Team sollte für optimale Produktivität insgesamt aus maximal zehn Personen bestehen [@brooks1995, p. 31; @coplien1994, p. 7]. Je nach Komplexität des Produkts und damit der Anzahl an Komponenten dürfte ein Team von mindestens drei Personen jedoch auch ausreichen. Auch diese Hypothese muss noch überprüft werden.
+
+![Die Benutzeroberfläche von Storybook](assets/wevent-components.netlify.com__path=_story_molecules-form--multiple%20(1).png)
+
+Als Basis für die Pattern Library kann Storybook[^8] verwendet werden. Storybook ist ein kostenloses, offenes Framework, das mit beliebten Web Libraries wie React[^9], Vue[^10] und Angular[^11] zusammenspielt. Storybook ermöglicht Entwicklern unkompliziert, Komponenten zu implementieren, zu dokumentieren und zu testen. Die Komponenten werden den Nutzern automatisch in einer übersichtlichen Benutzeroberfläche in allen möglichen Variationen zusammen mit Codebeispielen angezeigt [@storybook].
+
+Das Aufsetzen von Storybook und der Entwicklungsumgebung lässt sich nicht parallelisieren bzw. auf mehrere Teammitglieder aufteilen und sollte daher bereits vor dem Component Sprint geschehen, da alle anderen Aufgaben davon abhängen.
+
+Die Struktur des Component Sprints lässt sich essentiell in drei Sektionen unterteilen: Vorbereitung, Implementierung und Handoff. Jeder Tag des Sprints beginnt um 10:00 Uhr und endet um 17:00 Uhr. So können alle Teilnehmer des Sprints vor Beginn des Tages noch geschäftliche Angelegenheiten erledigen.
+
+Der erste Tag ist komplett der Vorbereitung gewidmet. Hier wird vorerst allen Teilnehmern das Konzept erklärt und die Entwicklungsumgebung sowie Richtlinien zur Entwicklung vorgestellt. Eventuelle Fragen können hier geklärt werden, sodass alle Teilnehmer sich auf dem selben Wissensstand befinden. Es ist wichtig, dass alle Entwickler den selben Richtlinien folgen, damit das Ergebnis einheitlich und übersichtlich bleibt. Diese Richtlinien können beispielsweise die Ordnerstruktur, Namenskonventionen, Codestil und 
+
+
+
 
 # Empirischer Test des entwickelten Konzepts
 
