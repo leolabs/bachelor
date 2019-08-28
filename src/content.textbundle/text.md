@@ -29,7 +29,6 @@ Um das Konzept weiter zu verfeinern werde ich eine qualitative Studie in Form vo
 Letztlich werde ich Schritte zur Weiterentwicklung des Konzepts anreißen und darlegen, wie sich Component Sprints in Zukunft ausbauen lassen können.
 
 # Theoretische Grundlagen / Einordnung
-
 ## Prozess der Produktentwicklung
 In den letzten 20 Jahren hat sich der Prozess, in dem Software entwickelt und veröffentlicht/verbreitet wird, stark verändert. Vor 20 Jahren wurde Software hauptsächlich als CD verkauft. Ein normaler Release-Zyklus lag bei mehreren Monaten. Bugs in der Software konnten erst in der nächsten Version behoben werden, Feedback von Benutzern konnte erst Monate später umgesetzt werden.
 
@@ -186,6 +185,8 @@ Ein Component Sprint sollte zwischen einem Design Sprint und der Entwicklung des
 
 Das Ziel eines Component Sprints ist die Erstellung eines Design Systems für ein Produkt. Damit ein Component Sprint in einem festen Zeitraum zuverlässig wertvolle Ergebnisse liefert, sollte er einer festen Struktur folgen, ähnlich wie es bei Design Sprints der Fall ist.
 
+Voraussetzung für einen Component Sprint ist ein validierter Prototyp, der bereits das finale Design des Produkts abbildet. Dieser wird als Grundlage bzw. Input des Component Sprints verwendet. Wenn das Unternehmen bereits ein definiertes CI bzw. Style Guide besitzt, sollte dieses zur Orientierung mit in den Component Sprint eingebracht werden.
+
 Angelehnt an den Zeitrahmen von Design Sprints sollte ein Component Sprint in einem Zeitraum von vier bis fünf Tagen erfolgen. Aus persönlicher Erfahrung als Entwickler dürfte dieser Zeitraum für die Implementierung der Pattern Library ausreichen. Diese Hypothese wird im praktischen Test des Component Sprints überprüft.
 
 Strukturell orientiert sich der Component Sprint an einem Hybrid aus Atomic Design und Design Systems. Die Komponenten der Pattern Library sind in Atome, Moleküle und Templates unterteilt, wobei ein Molekül ausschließlich aus Atomen und nicht aus anderen Molekülen bestehen darf um die Komplexität der Struktur zu limitieren. Design Systems schließt die Unterteilung der Komponenten nicht explizit aus und die Hierarchie soll Entwicklern während des Sprints helfen, die einzelnen Komponenten zu priorisieren, sodass keine Abhängigkeitsprobleme entstehen.
@@ -198,13 +199,23 @@ Das Sprint Team sollte für optimale Produktivität insgesamt aus maximal zehn P
 
 Als Basis für die Pattern Library kann Storybook[^8] verwendet werden. Storybook ist ein kostenloses, offenes Framework, das mit beliebten Web Libraries wie React[^9], Vue[^10] und Angular[^11] zusammenspielt. Storybook ermöglicht Entwicklern unkompliziert, Komponenten zu implementieren, zu dokumentieren und zu testen. Die Komponenten werden den Nutzern automatisch in einer übersichtlichen Benutzeroberfläche in allen möglichen Variationen zusammen mit Codebeispielen angezeigt [@storybook].
 
+Um die Zusammenarbeit zwischen den Teammitgliedern zu vereinfachen, bietet sich Versionsverwaltungssoftware wie beispielsweise Git[^12] an. Diese Software erlaubt es mehreren Entwicklern, parallel an dem selben Projekt zu arbeiten. Änderungen werden in Form von sogenannten Commits gespeichert und mit anderen Entwicklern oder einem zentralen Server synchronisiert [@zotero-105 K. 1.1]. Als zentrale Platform für Git bieten sich GitHub[^13], GitLab[^14] oder BitBucket[^15] an.
+
 Das Aufsetzen von Storybook und der Entwicklungsumgebung lässt sich nicht parallelisieren bzw. auf mehrere Teammitglieder aufteilen und sollte daher bereits vor dem Component Sprint geschehen, da alle anderen Aufgaben davon abhängen.
 
-Die Struktur des Component Sprints lässt sich essentiell in drei Sektionen unterteilen: Vorbereitung, Implementierung und Handoff. Jeder Tag des Sprints beginnt um 10:00 Uhr und endet um 17:00 Uhr. So können alle Teilnehmer des Sprints vor Beginn des Tages noch geschäftliche Angelegenheiten erledigen.
+Die Struktur des Component Sprints lässt sich essentiell in drei Sektionen unterteilen: Vorbereitung, Implementierung und Handoff. Angelehnt an den Design Sprint 2.0 von AJ&Smart [@ajsmart2018] beginnt beginnt jeder Tag um 10:00 Uhr und endet um 17:00 Uhr. So können alle Teilnehmer des Sprints vor Beginn des Tages noch geschäftliche Angelegenheiten erledigen.
 
-Der erste Tag ist komplett der Vorbereitung gewidmet. Hier wird vorerst allen Teilnehmern das Konzept erklärt und die Entwicklungsumgebung sowie Richtlinien zur Entwicklung vorgestellt. Eventuelle Fragen können hier geklärt werden, sodass alle Teilnehmer sich auf dem selben Wissensstand befinden. Es ist wichtig, dass alle Entwickler den selben Richtlinien folgen, damit das Ergebnis einheitlich und übersichtlich bleibt. Diese Richtlinien können beispielsweise die Ordnerstruktur, Namenskonventionen, Codestil und 
+Ebenfalls orientiert am Design Sprint gibt es einen Moderator, der das Team durch den Component Sprint leitet, mögliche Fragen beantworten kann und darauf achtet, dass alle Teammitglieder produktiv sind.
 
+Der erste Tag ist komplett der Vorbereitung gewidmet. Hier erklärt der Moderator vorerst allen Teilnehmern das Konzept und die Entwicklungsumgebung sowie Richtlinien zur Entwicklung. Eventuelle Fragen können hier geklärt werden, sodass alle Teilnehmer sich auf dem selben Wissensstand befinden. Es ist wichtig, dass alle Entwickler den selben Richtlinien folgen, damit das Ergebnis einheitlich und übersichtlich bleibt. Diese Richtlinien können beispielsweise die Ordnerstruktur, Namenskonventionen, Codestil und Art der Dokumentation festlegen.
 
+![Beispiel für Post-its der Komponenten](assets/component-post-its.png.tiff)
+
+Nach diesem Schritt wird der Prototyp bzw. das Ausgangsdesign Screen für Screen vom Team in einzelne Atome, Moleküle und Templates unterteilt. Jede Komponente wird als Post-it mit Name, Skizze und den möglichen Eigenschaften festgehalten und auf einer Wand gesammelt. Bei der Anordnung der Komponenten sollte bereits darauf geachtet werden, welche Komponenten von welchen Komponenten abhängig sind. So entsteht schnell eine Übersicht über alle Komponenten, die implementiert werden müssen.
+
+Am zweiten und dritten Tag werden die Komponenten implementiert. Dafür nimmt sich jeder Entwickler eine Komponente als Post-it von der Wand und implementiert und dokumentiert diese. Dieser Prozess lässt sich gut parallelisieren, da die meisten Komponenten unabhängig voneinander entwickelt werden können.
+
+Alle zwei Stunden führt das Team in Anleitung durch den Moderator ein Check-in durch, in dem der Status der Komponenten abgeglichen wird und mögliche Fragen und Probleme geklärt werden können.
 
 
 # Empirischer Test des entwickelten Konzepts
@@ -223,6 +234,11 @@ Der erste Tag ist komplett der Vorbereitung gewidmet. Hier wird vorerst allen Te
 Um d
 
 ### Auswahl der Interviewpartner
+
+- Daniel Bogdoll, CEO von SAYM
+- Niels Anhalt, Director bei nexum AG
+- Alexandra Holz, Researcher, Innovation Man. und Mobility Research bei Ford-Werke GmbH
+
 ### Entwicklung des Interviewleitfadens
 ### Durchführung der Interviews
 
@@ -255,3 +271,11 @@ Um d
 [^10]:	[https://vuejs.org/](https://vuejs.org/)
 
 [^11]:	.
+
+[^12]:	[https://git-scm.com/](https://git-scm.com/)
+
+[^13]:	[https://github.com](https://github.com)
+
+[^14]:	[https://about.gitlab.com/](https://about.gitlab.com/)
+
+[^15]:	[https://bitbucket.org](https://bitbucket.org)
