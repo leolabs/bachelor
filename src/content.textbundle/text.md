@@ -2,6 +2,8 @@
 
 In dieser Arbeit wird aus Gründen der besseren Lesbarkeit teilweise das generische Maskulinum verwendet. Weibliche und anderweitige Geschlechteridentitäten sind dabei ausdrücklich mitgemeint, soweit es für die Aussage erforderlich ist.
 
+Bei Zitaten ohne Angabe einer absoluten Seitenzahl handelt es sich um Webseiten oder E-Books, deren Seitenzahlen von der Bildschirmgröße abhängig sind. Bei diesen Quellen werden alternativ Kapitel- und Abschnittsangaben verwendet.
+
 Die Arbeit sowie alle im Rahmen der Arbeit entstandenen Ergebnisse sind open-source und können online[^1] eingesehen werden.
 
 # Einleitung
