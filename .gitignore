@@ -5,6 +5,7 @@ src/content.textbundle/*.html
 output/
 *.pdf
 *-converted.jpg
+~$*.doc?
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
