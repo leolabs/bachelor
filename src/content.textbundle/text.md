@@ -255,6 +255,7 @@ Der Design Sprint begann am Montag der ersten Projektwoche nach Aufbau des Sprin
 Im Anschluss wurden Langzeitziele der App sowie mehrere Sprintfragen vorgeschlagen. Mithilfe von Klebepunkten wurde jeweils über den passendsten Vorschlag abgestimmt. Das Langzeitziel des Sprints wurde auf “In two years’ time, it will be a fun, delightful, and smooth process to organize an event” festgelegt. Die Sprintfrage lautete: “Can we compete against traditional/alternative ways to organize events?”.
 
 ![Einzelne Schritte im User-Flow (ein Flow pro Zeile)](assets/sprint-user-flows.jpg)
+
 ![Sprint-Map mit markiertem Fokusbereich](assets/sprint-map.jpg)
 
 Um herauszufinden, welcher Bereich der App-Idee im Fokus des Sprints stehen sollte, legte jedes Teammitglied einen User-Flow, den ein potentieller Benutzer durchlaufen könnte, in maximal acht Schritten an. Diese Schritte wurden als Grundlage genutzt, um eine Map zu erstellen, die den Flow in drei Phasen – Discover, Learn und Use – unterteilt. Nach gemeinsamer Absprache wurde der Fokusbereich auf das Erstellen und Teilen eines Events und auf den Check-In für Gäste festgelegt. Dem Fokusbereich wurden relevante “How might we”-Fragen zugeordnet.
@@ -301,7 +302,7 @@ Insgesamt konnte das Team am Mittwoch zehn der 29 Komponenten implementieren. F�
 
 Am Donnerstag konnten bis auf zwei Templates alle Komponenten erfolgreich implementiert werden, jedoch dauerte der Tag auch hier länger als geplant und der Sprintraum wurde erst um 21:00 Uhr verlassen.
 
-Die letzten beiden Templates wurden am Freitag Morgen implementiert.  Daraufhin wurden alle Komponenten auf Korrektheit kontrolliert und die Dokumentation vervollständigt.
+Die letzten beiden Templates wurden am Freitag Morgen implementiert.  Daraufhin wurden alle Komponenten auf Korrektheit und Vollständigkeit hin kontrolliert, eventuelle Fehler behoben und die Dokumentation vervollständigt.
 
 Da es in diesem Component Sprint keinen Kunden im klassischen Sinne gibt, wurde das Handoff übersprungen und die Retro vorverlegt. Diese dauerte insgesamt ca. 1:30 Stunden.
 
