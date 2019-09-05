@@ -233,7 +233,79 @@ Der Component Sprint wird am Ende des vierten Tages mit einer Retrospektive abge
 
 # Empirischer Test des entwickelten Konzepts
 
+Um das im letzten Kapitel ausgearbeitete Konzept zu testen und die dort aufgestellten Hypothesen zu überprüfen, bietet sich die Durchführung eines Component Sprints im Anschluss an einen Design Sprint an, in dem eine neue Produktidee zu einem validierten Prototypen ausgearbeitet wird. 
+
+Um das Konzept so weit wie möglich auszureizen, wird der Component Sprint in vier Tagen und mit drei Teilnehmern durchgeführt. 
+
+Die Produktidee ist für diesen Test eine App, mit der Nutzer Events wie beispielsweise Geburtstage, Partys oder Spielabende im kleinen Rahmen planen können. Das Einladen von Gästen soll plattformunabhängig per Link funktionieren und eingeladene Personen sollen direkt über die App die Möglichkeit haben, zu- oder abzusagen. Die App trägt den Namen Wevent und soll so einfach wie möglich zu bedienen sein, sodass Nutzer keine große Hindernisse überwinden müssen um die App zu verwenden.
+
+Der Design Sprint für diese Produktidee wird in Kooperation mit Crisp Studio durchgeführt. Das Design Sprint Team besteht aus Daniel Wirtz[^16], René Nauheimer[^17] und mir. René übernimmt die Rolle des Moderators, beteiligt sich jedoch auch an den Aufgaben. Ich übernehme die Decider-Rolle. Für den Design Sprint wird auf die Struktur des Design Sprints 2.0 von AJ&Smart zurückgegriffen. So dauert der Design Sprint nur vier statt fünf Tage. 
+
+Der Component Sprint wird in der darauffolgenden Woche zusammen mit zwei Freelancern, die im Bereich Web Development tätig sind, durchgeführt. Hier besteht das Sprint Team aus Marcus Weiner[^18], Moritz Gunz[^19] und mir. Ich übernehme in diesem Sprint die Rolle des Moderators, beteilige mich aber auch mit an der Entwicklung.
+
+Da alle Teammitglieder bereits Erfahrung in der Entwicklung mit React haben, wird dieses Framework in Kombination mit Storybook für den Component Sprint eingesetzt.
+
+
 ## Ablauf
+
+Der Design Sprint begann am Montag der ersten Projektwoche nach Aufbau des Sprintraums und kurzer Einleitung mit einem Experteninterview. Hier beschrieb der Decider die Problemstellung und die Idee der App Wevent. Wichtige Punkte aus dem Gespräch wurden in Form von “How might we”-Fragen auf Post-its festgehalten und im Anschluss an das Gespräch in die Kategorien *Onboarding*, *Information*, *Ausrichtung* und *Misc* unterteilt. Über diese Fragen wurde nun abgestimmt. Jeder Teilnehmer bekam dafür zwei Stimmen in Form von Klebepunkten, der Decider vier.
+
+![Sprintziel und Sprintfrage](assets/sprint-question-can-we.jpg)
+
+Im Anschluss wurden Langzeitziele der App sowie mehrere Sprintfragen vorgeschlagen. Mithilfe von Klebepunkten wurde jeweils über den passendsten Vorschlag abgestimmt. Das Langzeitziel des Sprints wurde auf “In two years’ time, it will be a fun, delightful, and smooth process to organize an event” festgelegt. Die Sprintfrage lautete: “Can we compete against traditional/alternative ways to organize events?”.
+
+![Einzelne Schritte im User-Flow (ein Flow pro Zeile)](assets/sprint-user-flows.jpg)
+![Sprint-Map mit markiertem Fokusbereich](assets/sprint-map.jpg)
+
+Um herauszufinden, welcher Bereich der App-Idee im Fokus des Sprints stehen sollte, legte jedes Teammitglied einen User-Flow, den ein potentieller Benutzer durchlaufen könnte, in maximal acht Schritten an. Diese Schritte wurden als Grundlage genutzt, um eine Map zu erstellen, die den Flow in drei Phasen – Discover, Learn und Use – unterteilt. Nach gemeinsamer Absprache wurde der Fokusbereich auf das Erstellen und Teilen eines Events und auf den Check-In für Gäste festgelegt. Dem Fokusbereich wurden relevante “How might we”-Fragen zugeordnet.
+
+![Ergebnis der Lightning Demos](assets/sprint-lightning-demos.jpg)
+
+Am Nachmittag wurden zur UI-Inspiration Ideen aus bestehenden Websites gesammelt und in Lightning Demos vorgestellt. Die Ergebnisse wurden in Form von Post-its festgehalten.
+
+![3-Part-Sketch "Linky"](assets/sprint-sketching.jpg)
+
+Auf Grundlage dieser Ergebnisse und den am Vormittag erarbeiteten Fragen und Zielen zeichnete nun jedes Teammitglied Skizzen eines möglichen UI-Layouts. Diese wurden in Form von Crazy 8s optimiert und als 3-Part-Sketch zu einem User-Flow ausgearbeitet.
+
+Am Dienstag wurde der beste 3-Part-Sketch aus den drei erstellten Sketches durch mehrere Abstimmungen ausgewählt. Der Sketch mit dem Titel “Linky” erhielt am meisten Stimmen. Der in dem Sketch abgebildete Flow wurde, ähnlich wie im User-Flow-Schritt am Vortag, in einem User-Test-Flow abgebildet. Aus diesen beiden Ressourcen wurde nun in Teamarbeit ein acht-teiliges Storyboard erstellt.
+
+![Ausgearbeitetes Storyboard des Sketches "Linky"](assets/sprint-storyboard.png)
+
+Dieses Storyboard wurde am Mittwoch in Framer[^20] als testbarer Prototyp gebaut. Framer ist ein Tool, mit dem sich Prototypen mit wenig Aufwand erstellen lassen. Aufwändigere Teile des Prototypen können direkt als Code auf Basis von React implementiert werden. Das Prototyping dauerte hier länger als geplant, sodass die Endzeit des Tages von 17:00 Uhr auf 23:00 Uhr verlegt werden musste. Da die Benutzerinterviews am nächsten Tag von dem fertigen Prototypen abhängig sind, musste zumindest der User-Flow noch vollständig abgebildet werden.
+
+![Screenshot des fertigen Prototyps in Framer](assets/sprint-prototype.png)
+
+Am Donnerstag wurden die Benutzerinterviews durchgeführt. Dazu wurden im Vorhinein fünf Testpersonen organisiert, die zu dem Interview vor Ort erscheinen konnten. Diese Personen wurden von René durch den Prototypen geleitet. Nach der Vorstellung und dem Test des Prototypen fragte René jede Testperson, welche drei Wünsche sie an die App hätte.
+
+![Notizen zu einem der Nutzerinterviews](assets/Screenshot%202019-08-29%20at%2016.19.39.png)
+
+Die Interviews wurden per YouTube live an den Rest des Teams übertragen, der sich in einem anderen Raum gleichzeitig Notizen zu den Interviews machen konnte. Diese Notizen waren in die fünf Schritte, die der Nutzer im Prototyp durchläuft, die drei Wünsche und weitere Anmerkungen unterteilt. Jede Notiz wurde entweder als positiv (gelb), negativ (blau), Wünsche (rot) oder als Anmerkung zum Interview selbst markiert.
+
+Am Freitag wurden die Notizen aus den Nutzerinterviews in Form eines verkürzten Iteration Sprints zusammengefasst und festgehalten. Am Nachmittag wurde die Entwicklungsumgebung für den folgenden Component Sprint eingerichtet.
+
+Der Component Sprint begann am Dienstag der folgenden Woche mit einer kurzen Einführung in das Konzept, einer Vorstellung des Prototyps und einem Austausch über den besten Codestil, sowie über die Anwendung der Prinzipien des Atomic Design im Kontext von Web Apps.
+
+Nachdem alle offenen Fragen geklärt werden konnten, wurde auf den Computern der Teammitglieder die Entwicklungsumgebung eingerichtet, sodass alle Entwickler an der Pattern Library arbeiten können.
+
+Daraufhin wurde der Prototyp unter Anleitung des Moderators in einzelne Komponenten zerlegt. Neben den normalen Komponenten wie Atomen und Molekülen entstanden hierbei auch Komponenten, die in keine der vorgegebenen Kategorien passten. Da die meisten dieser Komponenten das Layout beeinflussten, wurde eine neue Kategorie “Layout” erstellt. Insgesamt entstanden bei der Zerlegung 29 Komponenten, unterteilt in neun Atome, elf Moleküle, vier Layout-Komponenten und fünf Templates.
+
+![Sortierte Komponenten des Prototyps](assets/component-wall.png)
+
+Das Zerlegen des Prototyps dauerte nicht so lange wie geplant, sodass der Tag schon um 15 Uhr beendet werden konnte.
+
+Am Mittwoch begann das Team mit der Implementierung und Dokumentation der Komponenten. Hierzu nahm sich jedes Teammitglied eine Komponente von der Post-it-Wand. Komponenten, an denen gerade gearbeitet wurde, wurden in eine “Doing”-Spalte verschoben, fertige Komponenten in eine “Done”-Spalte. So hatte jedes Teammitglied jederzeit einen Überblick über den Fortschritt.
+
+Reguläre Check-Ins wurden alle zwei Stunden vom Moderator durchgeführt, jedoch konnten viele der Fragen auch schon während der Entwicklung geklärt werden.
+
+Insgesamt konnte das Team am Mittwoch zehn der 29 Komponenten implementieren. Fünf Komponenten waren noch in Arbeit. Die Endzeit des Tages wurde nicht strikt eingehalten, sodass der Sprintraum erst um 20:00 Uhr verlassen wurde – drei Stunden nach dem geplanten Ende.
+
+Am Donnerstag konnten bis auf zwei Templates alle Komponenten erfolgreich implementiert werden, jedoch dauerte der Tag auch hier länger als geplant und der Sprintraum wurde erst um 21:00 Uhr verlassen.
+
+Die letzten beiden Templates wurden am Freitag Morgen implementiert.  Daraufhin wurden alle Komponenten auf Korrektheit kontrolliert und die Dokumentation vervollständigt.
+
+Da es in diesem Component Sprint keinen Kunden im klassischen Sinne gibt, wurde das Handoff übersprungen und die Retro vorverlegt. Diese dauerte insgesamt ca. 1:30 Stunden.
+
+Der Sprintraum wurde am Freitag um 15:00 Uhr verlassen.
 
 ## Ergebnisse
 
@@ -248,9 +320,6 @@ Um d
 
 ### Auswahl der Interviewpartner
 
-- Daniel Bogdoll, CEO von SAYM
-- Niels Anhalt, Director bei nexum AG
-- Alexandra Holz, Researcher, Innovation Man. und Mobility Research bei Ford-Werke GmbH
 
 ### Entwicklung des Interviewleitfadens
 ### Durchführung der Interviews
@@ -260,6 +329,10 @@ Um d
 - Angeli (Product Owner)
 
 ## Ergebnisse
+
+# Daniel Bogdoll, SAYM
+
+
 # Weiteres Vorgehen
 # Fazit / Zukünftige Ausbaumöglichkeiten
 
@@ -283,7 +356,7 @@ Um d
 
 [^10]:	[https://vuejs.org/](https://vuejs.org/)
 
-[^11]:	.
+[^11]:	[https://angular.io/](https://angular.io/)
 
 [^12]:	[https://git-scm.com/](https://git-scm.com/)
 
@@ -292,3 +365,13 @@ Um d
 [^14]:	[https://about.gitlab.com/](https://about.gitlab.com/)
 
 [^15]:	[https://bitbucket.org](https://bitbucket.org)
+
+[^16]:	[https://danielwirtz.com/](https://danielwirtz.com/)
+
+[^17]:	[https://twitter.com/renaui](https://twitter.com/renaui)
+
+[^18]:	[https://marcusweiner.de/](https://marcusweiner.de/)
+
+[^19]:	[https://moritzgunz.de/](https://moritzgunz.de/)
+
+[^20]:	[https://www.framer.com/](https://www.framer.com/)
