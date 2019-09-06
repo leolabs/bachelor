@@ -22,9 +22,6 @@
 	toc=flat,		% Inhaltsverzeichnis ohne Einzüge
 	twoside=false,		% Einseitig setzen
 	numbers=nodotatend,	% Nummerierungen nicht mit Punkt abschließen
-% die folgenden Optionen nehmen die entsprechende Dinge ins Inhaltsverzeichnis auf
-% mit der bei texlive vorhandenen aktuellen Version von pdflatex funkioniert es nicht mehr
-% (bekannter Bug)
 	toc=bibliography,	% Literaturverzeichnis ins Inhaltsverzeichnis
 	toc=listof,		% Abbildung- und Tabellenverzeichnis ins Inhaltsverzeichnis
 %	toc=index,		% Stichwortverzeichnis ins Inhaltsverzeichnis
@@ -97,22 +94,11 @@
 %\usepackage{paralist}		% Weitere Nummeriungsoptionen, z.b. alphabetisch für enumerate/itemize
 %\usepackage{verbatim}		% Verbesserte verbatim-Umgebung (z.b. Programm-Listings)
 %\usepackage{subfig}		% Unterfigures mit eigenen Bildunterschriften
-%
-
-%%%%%% Sammelsurium
-%
-%\renewcommand{\labelitemii}{$\circ$} % Bullets für itemize-Listen
-%
-%%%%%%%%%%  Angaben für Titelseite %%%%%%%%%%%%%%%%%%%%%%
-%
-\input{titelangaben}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
 
 \newcounter{savepage}
 \begin{document}
-% Einige Anpassungen müssen nach \begin{document} stehen !!
+
+% Einige Anpassungen müssen nach \begin{document} stehen
 \renewcaptionname{ngerman}{\figurename}{Abb.}
 \renewcaptionname{ngerman}{\tablename}{Tabelle}
 \renewcaptionname{ngerman}{\contentsname}{Inhalt}% Inhalt statt Inhaltsverzeichnis
@@ -124,15 +110,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Titel im FH Style
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{titelangaben}
 \fhacmbtitle{\includegraphics[height=4cm]{fh_logo.png}}{5pt}{5pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Erklärung / Geheimhaltung
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\frontmatter 	% Wenn der Hauptteil mit Seite 1 beginnen soll
 \pagestyle{plain}
 \input{erklaerung}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Disclaimer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{disclaimer}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Inhaltsverzeichnis
@@ -140,12 +133,15 @@
 
 \pagenumbering{gobble}
 \tableofcontents
-
-\listoffigures
 \pagenumbering{Roman}
+\listoffigures
+% \listoftables
 \setcounter{page}{1}
-\listoftables
 \setcounter{savepage}{\arabic{page}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \mainmatter	% Wenn der Hauptteil mit Seite 1 beginnen soll
 \pagestyle{plain}
@@ -156,12 +152,10 @@
 \renewcommand{\headfont}{\bfseries}	% Bold-Font für Headerzeile verwenden
 \setheadsepline{0.5pt}
 
-% \input{aufgabenstellung}
 \input{../content.textbundle/text.tex}
 
 \printbibliography
 
 \appendix
-% \input{anhang}
 
 \end{document}
