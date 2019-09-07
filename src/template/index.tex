@@ -51,6 +51,8 @@
 \usepackage{amsmath}		% Muss sein
 \usepackage{mathrsfs} 	% Weitere Mathematik-Symbole, z.B. Laplace-L
 \usepackage{grffile}
+\usepackage{longtable,booktabs}
+\usepackage{cleveref}
 
 \usepackage{graphicx}		% Definiert o.a. \includegraphics
 \graphicspath{{../content.textbundle/}{.}}
@@ -61,7 +63,7 @@
 \renewcommand{\familydefault}{\sfdefault}	% als Standardschrift serifenlose Schrift verwenden
 
 \usepackage{geometry} 		% Ränder direkt einstellen
-\geometry{a4paper, top=30mm, left=40mm, right=20mm, bottom=25mm} % nach Vorgabe
+\geometry{a4paper, top=30mm, left=40mm, right=20mm, bottom=30mm} % nach Vorgabe
 \linespread{1.5} 		% Zeilenabstand nach Vorgabe
 
 \usepackage[font=small,labelfont=bf]{caption}  % customization of captions of floating environments such figure and table
@@ -70,7 +72,6 @@
 \usepackage{chngcntr}		% Ändert Verhalten von Countern
 \counterwithout{figure}{section}	% Figure-Nummerierung nicht bei section-Wechsel zurücksetzen
 \renewcommand{\thefigure}{\thechapter.\arabic{figure}}	% im Stil 3.2
-
 \renewcommand{\thetable}{\thechapter.\arabic{table}}
 \renewcommand{\theequation}{\thechapter.\arabic{equation}}
 
