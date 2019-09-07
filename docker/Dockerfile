@@ -29,9 +29,12 @@ ENV TEXLIVE_DIR="/usr/local/texlive/2019"
 ENV TEXLIVE_BIN="${TEXLIVE_DIR}/bin/x86_64-linux"
 ENV PATH="${TEXLIVE_BIN}:${PATH}"
 
-# Install Pandoc
-RUN wget https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-1-amd64.deb && \
-  dpkg -i pandoc-2.7.3-1-amd64.deb && rm pandoc-2.7.3-1-amd64.deb
+# Install Pandoc and processors
+RUN apt-get update && apt-get install -y curl
+RUN curl https://get-ghcup.haskell.org -sSf | sh
+RUN curl -sSL https://get.haskellstack.org/ | sh
+ENV PATH="/.cabal/bin:/.local/bin:/.ghcup/bin:${PATH}"
+RUN cabal new-install pandoc pandoc-crossref pandoc-citeproc
 
 # ghostscript links to export (https://packages.debian.org/jessie/amd64/ghostscript/filelist)
 RUN ln -s /usr/bin/dvipdf /usr/bin/eps2eps /usr/bin/font2c /usr/bin/ghostscript \
@@ -43,7 +46,7 @@ RUN ln -s /usr/bin/dvipdf /usr/bin/eps2eps /usr/bin/font2c /usr/bin/ghostscript 
 
 # Install required LaTeX packages
 RUN tlmgr install biber latexmk varwidth logreq tabu geometry biblatex csquotes \
-  blindtext chngcntr tikz-cd blindtext wrapfig tabu paralist
+  blindtext chngcntr tikz-cd blindtext wrapfig tabu paralist cleveref
 
 COPY build.sh /build.sh
 RUN chmod +x build.sh

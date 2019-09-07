@@ -44,7 +44,8 @@ cleanup
 # Build TeX from Markdown
 blue_echo "Building TeX from Markdown..."
 safe_cd "$TEXTBUNDLE"
-pandoc --filter pandoc-citeproc \
+pandoc --filter pandoc-citeproc --filter pandoc-crossref \
+  -M cref=true \
   --bibliography ../bibliography/bibliography.bib --biblatex \
   --top-level-division=chapter \
   -o text.tex text.md
