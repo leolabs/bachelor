@@ -235,8 +235,9 @@ Der Design Sprint für diese Produktidee wird in Kooperation mit Crisp Studio du
 
 Der Component Sprint wird in der darauffolgenden Woche zusammen mit zwei Freelancern, die im Bereich Web Development tätig sind, durchgeführt. Hier besteht das Sprint Team aus Marcus Weiner[^17], Moritz Gunz[^18] und mir. Ich übernehme in diesem Sprint die Rolle des Moderators, beteilige mich aber auch mit an der Entwicklung.
 
-Da alle Teammitglieder bereits Erfahrung in der Entwicklung mit React haben, wird dieses Framework in Kombination mit Storybook für den Component Sprint eingesetzt.
+Da alle Teammitglieder bereits Erfahrung in der Entwicklung mit React haben, wird dieses Framework in Kombination mit Storybook für den Component Sprint eingesetzt. Für die Kollaboration wird Git auf GitHub eingesetzt.
 
+Die Zeiten der Implementierung der Komponenten werden anhand der Commit Logs auf GitHub festgehalten und können nach dem Test ausgewertet werden.
 
 ## Ablauf
 
@@ -250,13 +251,13 @@ Im Anschluss wurden Langzeitziele der App sowie mehrere Sprintfragen vorgeschlag
 
 ![Sprint-Map mit markiertem Fokusbereich](assets/sprint-map.jpg)
 
-Um herauszufinden, welcher Bereich der App-Idee im Fokus des Sprints stehen sollte, legte jedes Teammitglied einen User-Flow, den ein potentieller Benutzer durchlaufen könnte, in maximal acht Schritten an. Diese Schritte wurden als Grundlage genutzt, um eine Map zu erstellen, die den Flow in drei Phasen – Discover, Learn und Use – unterteilt. Nach gemeinsamer Absprache wurde der Fokusbereich auf das Erstellen und Teilen eines Events und auf den Check-In für Gäste festgelegt. Dem Fokusbereich wurden relevante “How might we”-Fragen zugeordnet.
+Um herauszufinden, welcher Bereich der App-Idee im Fokus des Sprints stehen sollte, legte jedes Teammitglied einen User-Flow in maximal acht Schritten an, den ein potentieller Benutzer durchlaufen könnte. Diese Schritte wurden als Grundlage genutzt, um eine Map zu erstellen, die den Flow in drei Phasen – *Discover*, *Learn* und *Use* – unterteilt. Nach gemeinsamer Absprache wurde der Fokusbereich auf das Erstellen und Teilen eines Events und auf den Check-In für Gäste festgelegt. Dem Fokusbereich wurden relevante “How might we”-Fragen zugeordnet.
 
 ![Ergebnis der Lightning Demos](assets/sprint-lightning-demos.jpg)
 
 Am Nachmittag wurden zur UI-Inspiration Ideen aus bestehenden Websites gesammelt und in Lightning Demos vorgestellt. Die Ergebnisse wurden in Form von Post-its festgehalten.
 
-![3-Part-Sketch "Linky"](assets/sprint-sketching.jpg)
+![3-Part-Sketches](assets/sprint-storyboards.png)
 
 Auf Grundlage dieser Ergebnisse und den am Vormittag erarbeiteten Fragen und Zielen zeichnete nun jedes Teammitglied Skizzen eines möglichen UI-Layouts. Diese wurden in Form von Crazy 8s optimiert und als 3-Part-Sketch zu einem User-Flow ausgearbeitet.
 
@@ -302,7 +303,50 @@ Der Sprintraum wurde am Freitag um 15:00 Uhr verlassen.
 
 ## Ergebnisse
 
-Sowohl der fertige Prototyp als auch die entwickelte Pattern Library 
+Zusammengefasst wurde in dem empirischen Test in einem Zeitraum von zwei Wochen eine grobe Idee zu einem validierten App-Prototypen und einer darauf abgestimmten Pattern Library ausgebaut. Mit Hilfe dieser Pattern Library kann im nächsten Schritt das MVP der App entwickelt werden.
+
+Die Ergebnisse des empirischen Tests sind in Form des fertigen Prototyps[^20] und der entwickelten Pattern Library[^21] online verfügbar.
+
+Da im Component Sprint zwei Tage um insgesamt sieben Stunden überzogen wurden, gilt die Hypothese, dass drei Entwickler in vier Tagen für einen Component Sprint mit einer Größenordnung von 29 Komponenten ausreichen, als widerlegt. 
+
+| Komponente       | Typ      | Editor | Zeit    | Commits |
+|------------------|----------|--------|---------|---------|
+| Avatar           | Atom     | Moritz | 0:42:00 | 11      |
+| Button           | Atom     | Marcus | 2:22:30 | 31      |
+| Datetime Picker  | Atom     | Marcus | 4:57:00 | 13      |
+| Icon             | Atom     | Marcus | 1:19:00 | 11      |
+| Input            | Atom     | Marcus | 0:48:00 | 10      |
+| Primary Input    | Atom     | Leo    | 0:18:00 | 4       |
+| Ribbon           | Atom     | Moritz | 0:31:00 | 10      |
+| Template Icon    | Atom     | Leo    | 0:30:00 | 4       |
+| Typography       | Atom     | Moritz | 2:06:00 | 25      |
+| Button Input     | Molecule | Moritz | 0:57:00 | 8       |
+| Event Detail     | Molecule | Moritz | 1:33:00 | 10      |
+| Form             | Molecule | Leo    | 3:01:30 | 9       |
+| Header           | Molecule | Leo    | 0:34:30 | 6       |
+| Jumbo            | Molecule | Moritz | 1:13:30 | 15      |
+| RSVP             | Molecule | Moritz | 1:12:00 | 11      |
+| Stepper          | Molecule | Leo    | 2:27:00 | 11      |
+| Template Chooser | Molecule | Leo    | 1:25:00 | 4       |
+| User             | Molecule | Marcus | 0:42:00 | 9       |
+| Well             | Molecule | Moritz | 0:16:30 | 6       |
+| Article          | Layout   | Marcus | 0:24:00 | 1       |
+| Content Wrapper  | Layout   | Leo    | 0:36:00 | 3       |
+| List             | Layout   | Leo    | 0:57:00 | 2       |
+| Overlay          | Layout   | Leo    | 1:27:00 | 4       |
+| Colors           | Layout   | Leo    | 3:25:00 | 7       |
+| Landing Page     | Template | Moritz | 2:34:00 | 7       |
+| Register / Login | Template | Moritz | 1:13:00 | 4       |
+| Create Event     | Template | Marcus | 2:22:30 | 4       |
+| Event Preview    | Template | Marcus | 2:27:00 | 2       |
+| Share            | Template | Leo    | 3:06:00 | 3       |
+
+| Typ      | ø Zeit  | Median Zeit | ø Commits |
+|----------|---------|-------------|-----------|
+| Atom     | 1:30:23 | 0:48:00     | 13,2      |
+| Molecule | 1:20:12 | 1:12:45     | 8,9       |
+| Layout   | 1:21:48 | 0:57:00     | 3,0       |
+| Template | 2:30:30 | 2:27:00     | 4,0       |
 
 ## Erkenntnisse / Learnings
 
@@ -311,17 +355,14 @@ Sowohl der fertige Prototyp als auch die entwickelte Pattern Library
 ## Studiendesign
 ### Begründung
 
-Um d
+Um das Konzept der Component Sprints weiter auszuarbeiten, bietet sich eine qualitative Studie in Form von Experteninterviews mit Personen aus digitalen Firmen verschiedener Größen an.
 
 ### Auswahl der Interviewpartner
 
+Insgesamt werden vier Interviews durchgeführt –zwei davon mit Personen aus Agenturen, die digitale Projekte für andere Firmen konzipieren und umsetzen und zwei mit Personen, die 
 
 ### Entwicklung des Interviewleitfadens
 ### Durchführung der Interviews
-
-- Jeremy (Head of Design Experience) hat viel Design Sprint Erfahrung bei Trivago
-- Ulf (UX Engineer)
-- Angeli (Product Owner)
 
 ## Ergebnisse
 
@@ -368,3 +409,7 @@ Um d
 [^18]:	[https://moritzgunz.de/](https://moritzgunz.de/)
 
 [^19]:	[https://www.framer.com/](https://www.framer.com/)
+
+[^20]:	[https://wevent-prototype.netlify.com/](https://wevent-prototype.netlify.com/)
+
+[^21]:	[https://wevent-components.netlify.com/](https://wevent-components.netlify.com/)
