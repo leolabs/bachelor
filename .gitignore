@@ -3,7 +3,6 @@ src/content.textbundle/*.tex
 src/content.textbundle/*.tex-e
 src/content.textbundle/*.html
 output/
-*.pdf
 *-converted.jpg
 ~$*.doc?
 
