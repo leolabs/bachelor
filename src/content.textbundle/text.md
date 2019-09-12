@@ -354,7 +354,7 @@ Um das Konzept der Component Sprints weiter auszuarbeiten, bietet sich eine qual
 
 Diese Experteninterviews bieten qualitative Einblicke in das Wissen der Experten und deren Sicht auf bestimmte Situationen [@glaeser2010, S. 13], in diesem konkreten Fall auf die Arbeitsumgebung, die Arbeitsweisen und die Anforderungen in ihrem Unternehmen.
 
-Der Begriff “‘Experte' beschreibt [hierbei] die spezifische Rolle des Interviewpartners als Quelle von Spezialwissen über die zu erfor­schenden […] Sachverhalte.” [@glaeser2010, S. 12]
+Der Begriff “‘Experte’ beschreibt [hierbei] die spezifische Rolle des Interviewpartners als Quelle von Spezialwissen über die zu erfor­schenden […] Sachverhalte.” [@glaeser2010, S. 12]
 
 
 
