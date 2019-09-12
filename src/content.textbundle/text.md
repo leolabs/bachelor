@@ -22,7 +22,7 @@ Um das Konzept weiter zu verfeinern werde ich eine qualitative Studie in Form vo
 
 Letztlich werde ich Schritte zur Weiterentwicklung des Konzepts anreißen und darlegen, wie sich Component Sprints in Zukunft ausbauen lassen können.
 
-# Theoretische Grundlagen / Einordnung
+# Theoretische Grundlagen / Einordnung {#sec:grundlagen}
 ## Prozess der Produktentwicklung
 In den letzten 20 Jahren hat sich der Prozess, in dem Software entwickelt und veröffentlicht/verbreitet wird, stark verändert. Vor 20 Jahren wurde Software hauptsächlich als CD verkauft. Ein normaler Release-Zyklus lag bei mehreren Monaten. Bugs in der Software konnten erst in der nächsten Version behoben werden, Feedback von Benutzern konnte erst Monate später umgesetzt werden.
 
@@ -50,7 +50,7 @@ Der Design Sprint ist ein Ansatz, der diesen Zyklus optimiert. Hierbei werden di
 
 ![Struktur des gesamten Design Sprints \[@knapp2016, S. 17\]](assets/Design%20Sprint%20Structure.jpg)
 
-Ein Design Sprint dauert in der Regel fünf Tage – Montag bis Freitag – und wird vor Ort mit einem interdisziplinären Team von 4-7 Personen und einem Moderator durchgeführt.  Die Tage sind zeitlich fest strukturiert und jegliche Form von Ablenkung, wie z.B. Handys oder Laptops, ist nicht erlaubt. Ziel dieser Maßnahmen ist es, dass sich das Team fokussiert mit den Aufgaben auseinandersetzen kann [@knapp2016, S. 41]. Gesammelte Informationen werden auf Post-its festgehalten, sodass sie für jedes Teammitglied jederzeit sichtbar sind [@knapp2016, p. 20].
+Ein Design Sprint dauert in der Regel fünf Tage – Montag bis Freitag – und wird vor Ort mit einem interdisziplinären Team von 4-7 Personen und einem Moderator durchgeführt. Die Tage sind zeitlich fest strukturiert und jegliche Form von Ablenkung, wie z.B. Handys oder Laptops, ist nicht erlaubt. Ziel dieser Maßnahmen ist es, dass sich das Team fokussiert mit den Aufgaben auseinandersetzen kann [@knapp2016, S. 41]. Gesammelte Informationen werden auf Post-its festgehalten, sodass sie für jedes Teammitglied jederzeit sichtbar sind [@knapp2016, p. 20].
 
 Generell wird in Design Sprints auf lange Diskussionen verzichtet. Diese sind nicht effizient und geben Teilnehmern mit einer starken Meinung zu viel Gewichtung und Einfluss auf die Entscheidungen [@kahneman2013, K. 7]. Stattdessen werden Entscheidungen per Abstimmung, meist mit Hilfe von Klebepunkten, getroffen. Der CEO, Gründer, Produktmanager oder Head of Design hat als Decider in Abstimmungen eine größere Entscheidungskraft [@knapp2016, S. 34].
 
@@ -273,7 +273,7 @@ Am Donnerstag wurden die Benutzerinterviews durchgeführt. Dazu wurden im Vorhin
 
 ![Notizen zu einem der Nutzerinterviews](assets/Screenshot%202019-08-29%20at%2016.19.39.png)
 
-Die Interviews wurden per YouTube live an den Rest des Teams übertragen, der sich in einem anderen Raum gleichzeitig Notizen zu den Interviews machen konnte. Diese Notizen waren in die fünf Schritte, die der Nutzer im Prototyp durchläuft, die drei Wünsche und weitere Anmerkungen unterteilt. Jede Notiz wurde entweder als positiv (gelb), negativ (blau), Wünsche (rot) oder als Anmerkung zum Interview selbst markiert.
+Die Interviews wurden mithilfe von OBS Studio[^20] per YouTube live an den Rest des Teams übertragen, der sich in einem anderen Raum gleichzeitig Notizen dazu machen konnte. Diese Notizen waren in die fünf Schritte, die der Nutzer im Prototyp durchläuft, die drei Wünsche und weitere Anmerkungen unterteilt. Jede Notiz wurde entweder als positiv (gelb), negativ (blau), Wünsche (rot) oder als Anmerkung zum Interview selbst markiert.
 
 Am Freitag wurden die Notizen aus den Nutzerinterviews in Form eines verkürzten Iteration Sprints zusammengefasst und festgehalten. Am Nachmittag wurde die Entwicklungsumgebung für den folgenden Component Sprint eingerichtet.
 
@@ -305,12 +305,119 @@ Der Sprintraum wurde am Freitag um 15:00 Uhr verlassen.
 
 Zusammengefasst wurde in dem empirischen Test in einem Zeitraum von zwei Wochen eine grobe Idee zu einem validierten App-Prototypen und einer darauf abgestimmten Pattern Library ausgebaut. Mit Hilfe dieser Pattern Library kann im nächsten Schritt das MVP der App entwickelt werden.
 
-Die Ergebnisse des empirischen Tests sind in Form des fertigen Prototyps[^20] und der entwickelten Pattern Library[^21] online verfügbar.
+Die Ergebnisse des empirischen Tests sind in Form des fertigen Prototyps[^21] und der entwickelten Pattern Library[^22] online verfügbar.
 
-Da im Component Sprint zwei Tage um insgesamt sieben Stunden überzogen wurden, gilt die Hypothese, dass drei Entwickler in vier Tagen für einen Component Sprint mit einer Größenordnung von 29 Komponenten ausreichen, als widerlegt. 
+Da im Component Sprint zwei Tage um insgesamt sieben Stunden überzogen wurden, gilt die Hypothese, dass drei Entwickler in vier Tagen für einen Component Sprint mit einer Größenordnung von 29 Komponenten ausreichen, als widerlegt.
+
+| Type     | Count | ø Time  | Median Time | ø Commits |
+|----------|------:|--------:|------------:|----------:|
+| Atom     |     9 | 1:30:23 | 0:48:00     | 13,2      |
+| Molecule |    10 | 1:20:12 | 1:12:45     | 8,9       |
+| Layout   |     5 | 1:21:48 | 0:57:00     | 3,0       |
+| Template |     5 | 2:30:30 | 2:27:00     | 4,0       | 
+
+: Durchschnittliche Entwicklungszeiten der Komponenten
+
+Die durchschnittlichen Entwicklungszeiten der einzelnen Komponenten unterscheiden sich mit der Ausnahme von Templates nicht groß voneinander. Um zukünftige Component Sprints besser planen zu können, bietet es sich an, für Atome, Moleküle und Layout-Komponenten jeweils ca. 2 Stunden Entwicklungszeit einzuberechnen. Für Templates sollten 3 Stunden einberechnet werden. Diese Zeiten enthalten 30 Minuten Pufferzeit, die dabei helfen, falls die Entwicklung der Komponenten länger dauern sollte als geplant. Die genauen Zeiten der einzelnen Komponenten sind in @tbl:componentTimesDetailed aufgeschlüsselt.
+
+$$1 \text{ Tag} + \frac{24 \text{ Komponenten} * 2 \text{ h} + 5 \text{ Layouts} * 3 \text{ h}}{6 \text{ h/Tag} * 3 \text{ Entwickler}} = 4,5 \text{ Tage}$$ {#eq:days3}
+
+$$1 \text{ Tag} + \frac{24 \text{ Komponenten} * 2 \text{h} + 5 \text{ Layouts} * 3 \text{h}}{6 \text{ h/Tag} * 4 \text{ Entwickler}} = 3,625 \text{ Tage}$$ {#eq:days4}
+
+Basierend auf diesen Daten und mit der Annahme, dass die Arbeitsleistung proportional mit der Anzahl der Entwickler steigt, hätte der Component Sprint mit drei Entwicklern in fünf Tagen (@eq:days3) oder mit vier Entwicklern in vier Tagen (@eq:days4) ohne Überstunden gelingen können. Diese Annahme wurde jedoch bisher noch nicht bestätigt.
+
+
+## Erkenntnisse
+
+Die folgenden Learnings wurden in der Retro am Ende des Component Sprints gesammelt.
+
+Das Tooling des Component Sprints mit Storybook, React und Linaria wurde positiv wahrgenommen. In Zukunft wäre es einfach, die Pattern Library des Component Sprints um UI Testing bzw. Visual Diffing zu erweitern, um sicherzustellen, dass alle Komponenten auch nach möglichen Änderungen gegebene Grundvoraussetzungen erfüllen und sich das Aussehen nicht ungewollt verändert. Hierzu eignen sich Dienste wie Percy[^23] oder Chromatic[^24], die sich in Storybook integrieren lassen und dieses Testing automatisieren können.
+
+Durch Konzentration auf die Implementierung von UI-Komponenten kam es selten vor, dass ein Teammitglied in der Umsetzung nicht weiterkam. Da es innerhalb einer Hierarchieebene, wie z.B. bei Atomen, keine Abhängigkeiten zwischen Komponenten gab, konnte zudem das “Together Alone”-Prinzip aus Design Sprints gut angewendet werden und die Teammitglieder unabhängig voneinander arbeiten, was zur Annahme führte, dass der Component Sprint gut skalieren würde.
+
+Um den Component Sprint in Zukunft noch effizienter zu gestalten, wäre es sinnvoll, bereits im Vorhinein feste Vorgaben für Farben, Formen und die generelle CI des Produktes festzulegen um Unklarheiten bei der Implementierung vorzubeugen. Im Falle des Test-Sprints war das größte Problem die Definition der Farben, die in den Komponenten verwendet werden sollten.
+
+Zusätzlich zu strikteren Designvorgaben wünschte sich das Sprint Team eine Design Role als Teil des Teams, die sich um die visuelle Kohärenz der Pattern Library kümmert und eventuelle Fragen der Entwickler beantworten kann. Im Optimalfall sollte diese Design Role aus dem Unternehmen kommen, für das die Pattern Library entwickelt wird, und sich mit der Designsprache des Unternehmens gut auskennen, falls bereits eine definiert ist.
+
+Der Idee, Entwickler des Kundenteams mit in den Component Sprint einzubeziehen, stand das Sprint Team skeptisch gegenüber. Der größte Kritikpunkt war hier, dass diese Developer Role eventuell den Fortschritt zurückhalten könnte, da sie durch bisherige Verfahren im Unternehmen bereits geprägt ist. Auf der anderen Seite besitzt diese Person auch nützliches Wissen, das bei der Entwicklung der Pattern Library helfen könnte.
+
+Dem Moderator gegenüber wünschte sich das Team mehr Moderation und eine ausführlichere Einführung in das Thema für Mitglieder, die noch nicht mit den Konzepten von Design Systems, Atomic Design und Component Sprints gearbeitet haben.
+
+Zusammengefasst war das gesamte Sprint Team mit dem Component Sprint zufrieden, sah jedoch noch Potential zur Optimierung des Konzepts für zukünftige Sprints.
+
+# Qualitative Studie zur Verfeinerung des Konzepts
+
+## Studiendesign
+
+
+Um das Konzept der Component Sprints weiter auszuarbeiten, bietet sich eine qualitative Studie in Form von Experteninterviews mit Personen aus digitalen Firmen verschiedener Größen an.
+
+Diese Experteninterviews bieten qualitative Einblicke in das Wissen der Experten und deren Sicht auf bestimmte Situationen [@glaeser2010, S. 13], in diesem konkreten Fall auf die Arbeitsumgebung, die Arbeitsweisen und die Anforderungen in ihrem Unternehmen.
+
+Der Begriff “‘Experte' beschreibt [hierbei] die spezifische Rolle des Interviewpartners als Quelle von Spezialwissen über die zu erfor­schenden […] Sachverhalte.” [@glaeser2010, S. 12]
+
+
+
+Insgesamt werden vier Interviews durchgeführt – zwei davon mit Personen aus Agenturen, die digitale Projekte für andere Firmen konzipieren und umsetzen und zwei mit Personen, die aktiv an eigenen Produkten arbeiten. Die Firmengröße reicht hierbei von einem Startup mit fünf Mitarbeitern [@saym2019] bis hin zu einem Großunternehmen mit über 50000 Mitarbeitern.
+
+Das Ziel dieser diversen Auswahl ist die Gewinnung von vielen verschiedenen Perspektiven auf das Konzept der Component Sprints und dessen Potential als Dienstleistung in verschiedenen Situationen.
+
+Als Interviewte haben sich folgende Personen bereiterklärt:
+
+- Daniel Bogdoll, CEO bei SAYM
+- Eine anonyme Person aus der Automobilbranche
+- Niels Anhalt, Director bei nexum AG
+- Markus Mazur, Geschäftsführer bei Duplexmedia
+
+### Entwicklung des Interviewleitfadens
+
+Um den interviewten Personen genug Freiraum zu lassen, eigene Ideen und Gedanken mit in das Interview einbringen zu können, wird das Interview semistrukturiert aufgebaut. Hierdurch soll ein offenes Gespräch ermöglicht werden, sollte die interviewte Person sich dies wünschen.
+
+Zur Einordnung der interviewten Personen in ihr Arbeitsumfeld beginnen die Interviews vorerst mit Fragen zur Person. Hierzu werden folgende Fragen gestellt:
+
+- Wo arbeitest du?
+- Was bietet dein Produkt / deine Firma?
+
+Darauf folgend wird die interviewte Person bezüglich der theoretischen Grundlagen befragt, um zu erfahren, inwiefern sie bereits mit den in @sec:grundlagen vorgestellten Konzepten – insbesondere mit Design Sprints und Component Systems bzw. Pattern Libraries – vertraut ist. Zusätzlich ist die Erfahrung der Person mit dem Einsatz dieser Konzepte interessant:
+
+- Hast du schonmal mit Design Sprints gearbeitet?
+	- Welche Vor- und Nachteile siehst du bei Design Sprints?
+- Mit welchen Frameworks arbeitet ihr?
+- Nutzt ihr eine Pattern Library für das Design eures Produktes?
+	- Welche Vor- und Nachteile siehst du bei Pattern Libraries?
+
+Im Anschluss daran wird der interviewten Person das Konzept der Component Sprints, sowie ein Bericht des empirischen Tests anhand des Beispielprojektes Wevent inklusive der Ergebnisse vorgestellt. Auf Grundlage dieser Informationen kann die interviewte Person nun nach ihrer Einstellung zu dem Konzept befragt werden.
+
+- Hast du generell Fragen zu dem Konzept?
+- Wo siehst du in Component Sprints Potential?
+- Wo könnte es zu Problemen kommen?
+- Könntest du dir für dein Unternehmen so einen Sprint vorstellen?
+
+Daraufhin wird die Person nach ihrer Einschätzung zu potentiellen Zielgruppen für Component Sprints befragt. Diese Frage ist für die Weiterentwicklung des Konzepts interessant:
+
+- Für welche Zielgruppe könnte der Component Sprint interessant sein?
+
+Letztlich erhält die interviewte Person die Möglichkeit, Gedanken oder Ideen, die ihr noch vorschweben, loszuwerden:
+
+- Hast du noch Gedanken oder Ideen zu dem Konzept, die dir gerade vorschweben?
+
+Es werden nicht alle Fragen auf alle Experten zutreffen, sodass manche Fragen je nach Interview leicht angepasst oder ausgelassen werden.
+
+
+### Durchführung der Interviews
+
+## Ergebnisse
+
+# Daniel Bogdoll, SAYM
+
+
+# Weiteres Vorgehen
+# Fazit / Zukünftige Ausbaumöglichkeiten
+
+# Anhang
 
 | Komponente       | Typ      | Editor | Zeit    | Commits |
-|------------------|----------|--------|---------|---------|
+|------------------|----------|--------|--------:|--------:|
 | Avatar           | Atom     | Moritz | 0:42:00 | 11      |
 | Button           | Atom     | Marcus | 2:22:30 | 31      |
 | Datetime Picker  | Atom     | Marcus | 4:57:00 | 13      |
@@ -341,36 +448,7 @@ Da im Component Sprint zwei Tage um insgesamt sieben Stunden überzogen wurden, 
 | Event Preview    | Template | Marcus | 2:27:00 | 2       |
 | Share            | Template | Leo    | 3:06:00 | 3       |
 
-| Typ      | ø Zeit  | Median Zeit | ø Commits |
-|----------|---------|-------------|-----------|
-| Atom     | 1:30:23 | 0:48:00     | 13,2      |
-| Molecule | 1:20:12 | 1:12:45     | 8,9       |
-| Layout   | 1:21:48 | 0:57:00     | 3,0       |
-| Template | 2:30:30 | 2:27:00     | 4,0       |
-
-## Erkenntnisse / Learnings
-
-# Qualitative Studie zur Verfeinerung des Konzepts
-
-## Studiendesign
-### Begründung
-
-Um das Konzept der Component Sprints weiter auszuarbeiten, bietet sich eine qualitative Studie in Form von Experteninterviews mit Personen aus digitalen Firmen verschiedener Größen an.
-
-### Auswahl der Interviewpartner
-
-Insgesamt werden vier Interviews durchgeführt –zwei davon mit Personen aus Agenturen, die digitale Projekte für andere Firmen konzipieren und umsetzen und zwei mit Personen, die 
-
-### Entwicklung des Interviewleitfadens
-### Durchführung der Interviews
-
-## Ergebnisse
-
-# Daniel Bogdoll, SAYM
-
-
-# Weiteres Vorgehen
-# Fazit / Zukünftige Ausbaumöglichkeiten
+: Aufgeschlüsselte Entwicklungszeiten der einzelnen Komponenten {#tbl:componentTimesDetailed}
 
 [^1]:	https://ajsmart.com
 
@@ -410,6 +488,12 @@ Insgesamt werden vier Interviews durchgeführt –zwei davon mit Personen aus Ag
 
 [^19]:	[https://www.framer.com/](https://www.framer.com/)
 
-[^20]:	[https://wevent-prototype.netlify.com/](https://wevent-prototype.netlify.com/)
+[^20]:	[https://obsproject.com/](https://obsproject.com/)
 
-[^21]:	[https://wevent-components.netlify.com/](https://wevent-components.netlify.com/)
+[^21]:	[https://wevent-prototype.netlify.com/](https://wevent-prototype.netlify.com/)
+
+[^22]:	[https://wevent-components.netlify.com/](https://wevent-components.netlify.com/)
+
+[^23]:	[https://percy.io/](https://percy.io/)
+
+[^24]:	[https://www.chromaticqa.com](https://www.chromaticqa.com)
