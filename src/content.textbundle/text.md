@@ -358,16 +358,18 @@ Der Begriff “‘Experte’ beschreibt [hierbei] die spezifische Rolle des Inte
 
 
 
-Insgesamt werden vier Interviews durchgeführt – zwei davon mit Personen aus Agenturen, die digitale Projekte für andere Firmen konzipieren und umsetzen und zwei mit Personen, die aktiv an eigenen Produkten arbeiten. Die Firmengröße reicht hierbei von einem Startup mit fünf Mitarbeitern [@saym2019] bis hin zu einem Großunternehmen mit über 50000 Mitarbeitern.
+Insgesamt werden vier Interviews durchgeführt – zwei davon mit Personen aus Agenturen, die digitale Projekte für andere Firmen konzipieren und umsetzen und zwei mit Personen, die aktiv an eigenen Produkten arbeiten. Die Firmengröße reicht hierbei von einem Startup mit fünf Mitarbeitern [@saym2019] bis hin zu einem Großunternehmen mit über 50000 Mitarbeitern (anonym).
 
 Das Ziel dieser diversen Auswahl ist die Gewinnung von vielen verschiedenen Perspektiven auf das Konzept der Component Sprints und dessen Potential als Dienstleistung in verschiedenen Situationen.
 
 Als Interviewte haben sich folgende Personen bereiterklärt:
 
-- Daniel Bogdoll, CEO bei SAYM
-- Eine anonyme Person aus der Automobilbranche
-- Niels Anhalt, Director bei nexum AG
-- Markus Mazur, Geschäftsführer bei Duplexmedia
+- Daniel Bogdoll, CEO bei SAYM[^25] (23.8.2019)
+- Niels Anhalt, Director bei nexum AG[^26] (27.8.2019)
+- Eine anonyme Person aus der Automobilbranche (28.8.2019)
+- Markus Mazur, Geschäftsführer bei Duplexmedia[^27] (2.9.2019)
+
+Die anonyme Person wird im Folgenden als (anonym) bezeichnet.
 
 ### Entwicklung des Interviewleitfadens
 
@@ -381,12 +383,12 @@ Zur Einordnung der interviewten Personen in ihr Arbeitsumfeld beginnen die Inter
 Darauf folgend wird die interviewte Person bezüglich der theoretischen Grundlagen befragt, um zu erfahren, inwiefern sie bereits mit den in @sec:grundlagen vorgestellten Konzepten – insbesondere mit Design Sprints und Component Systems bzw. Pattern Libraries – vertraut ist. Zusätzlich ist die Erfahrung der Person mit dem Einsatz dieser Konzepte interessant:
 
 - Hast du schonmal mit Design Sprints gearbeitet?
-	- Welche Vor- und Nachteile siehst du bei Design Sprints?
+- Welche Vor- und Nachteile siehst du bei Design Sprints?
 - Mit welchen Frameworks arbeitet ihr?
 - Nutzt ihr eine Pattern Library für das Design eures Produktes?
-	- Welche Vor- und Nachteile siehst du bei Pattern Libraries?
+- Welche Vor- und Nachteile siehst du bei Pattern Libraries?
 
-Im Anschluss daran wird der interviewten Person das Konzept der Component Sprints, sowie ein Bericht des empirischen Tests anhand des Beispielprojektes Wevent inklusive der Ergebnisse vorgestellt. Auf Grundlage dieser Informationen kann die interviewte Person nun nach ihrer Einstellung zu dem Konzept befragt werden.
+Im Anschluss daran wird der interviewten Person das Konzept der Component Sprints, sowie ein Bericht des empirischen Tests anhand des Beispielprojekts Wevent inklusive der Ergebnisse vorgestellt. Diese beinhalten sowohl den Prototypen als auch auf Grundlage dessen entwickelte Pattern Library. Auf Grundlage dieser Informationen kann die interviewte Person nun nach ihrer Einstellung zu dem Konzept befragt werden.
 
 - Hast du generell Fragen zu dem Konzept?
 - Wo siehst du in Component Sprints Potential?
@@ -404,12 +406,81 @@ Letztlich erhält die interviewte Person die Möglichkeit, Gedanken oder Ideen, 
 Es werden nicht alle Fragen auf alle Experten zutreffen, sodass manche Fragen je nach Interview leicht angepasst oder ausgelassen werden.
 
 
-### Durchführung der Interviews
+
+Die Experteninterviews sind für eine Dauer von maximal einer Stunde angelegt. Während der Interviews ist es nötig, dass die interviewte Person den Bildschirm des Interviewers sehen kann, um die Ergebnisse des empirischen Tests sehen zu können. Daher werden Drei der Interviews per Videokonferenz und ein Interview in Person vor Ort durchgeführt.
+
+Letztendlich nahmen die Interviews mit Markus Mazur und Niels Anhalt die gesamte Stunde in Anspruch. Die anderen beiden Interviews dauerten 25 (anonym) bzw. 40 (Daniel Bogdoll) Minuten.
+
+## Ergebnisse (Notizen)
+
+- Generell positiv, muss aber noch überarbeitet werden
+	- Daniel: Sieht schon Potential (Z. 263pp) und würde mit uns auch gerne in Zukunft einen CS machen (Z. 442pp)
+	- (anonym): Sieht persönlich in ihrer Rolle keinen Mehrwert, für Entwicklerteams aber definitiv (Z. 232pp)
+	- Markus: Hätte den Sprint auch firmenintern für die eigene Website gebrauchen können (Z. 388pp)
+- Arbeit mit Design Sprints:
+	- Daniel: KA
+	- (anonym): Ja (Z. 35p)
+	- Niels: Ja (Z. 40)
+	- Markus: Nein (Z. 164pp)
+- Erfahrungen mit Design Sprints
+	- (anonym):
+		- Findet es grundsätzlich sinnvoll um zu verstehen, wie Kunden eine Idee sehen (Z. 39p)
+		- Hinterfragt, wie repräsentativ die Methode mit nur 5 Testpersonen ist (Z. 42pp)
+		- Würde Design Sprints gerne zusammen mit Kunden machen, sieht das aber als schwierig an (Z. 50pp)
+	- Niels:
+		- Findet es gut, dass ein Design Sprint “[…] so kompakt ist und wirklich alle Phasen durchläuft.” (Z. 43p)
+		- Legt positiv Fokus auf die Kürze des Sprints (Z. 46p)
+		- Problemfindungsphase muss bei größeren Unternehmen mit mehr Stakeholdern vorverlegt werden, da man sonst keine Aufträge bekommt (Z. 47pp)
+		- Experten haben nicht immer Zeit, um an den Experteninterviews teilzunehmen. Manchmal müssen die auch vorverlegt werden (Z. 59pp)
+- Arbeit mit Component/Pattern Library:
+	- Daniel: Nein (Z. 66)
+	- (anonym): Guidelines, aber keine Component Library (Z. 57pp)
+	- Niels: KA
+	- Markus: KA
+- Verwendete Frameworks:
+	- Daniel: React Native mit nativen Elementen (Z. 23pp)
+	- (anonym): KA
+	- Niels: React mit NextJS (Z. 69pp)
+	- Markus: Früher mehr Webflow, jetzt selbst entwickeltes (Z. 74pp)
+- x Unterschied: Zeitpunkt und Scope des CS
+	- Daniel: Nach dem MVP, für die richtige App (Z. 314p)
+	- (anonym): Einmalig für das gesamte Unternehmen (Z. 226p)
+	- Niels: Nach dem Design Sprint, wenn man nicht gerade ein Startup ist (Z. 384pp), aber mit einem vorgeschobenen Iteration Sprint (Z. 241pp)
+	- Markus: keine Antwort
+- x Zielgruppe: 
+	- Daniel: Sowohl Startups als auch größere Unternehmen (Z. 364pp)
+	- (anonym): Alle Unternehmen können davon profitieren (Z. 235p)
+	- Niels: Sowohl Startups als auch größere Unternehmen (Z. 619pp)
+	- Markus: Größe der Firma ist nicht wichtig, eher die Art des Produktes (Z. 410p). Apps sind aber passender als Websites (Z. 466pp).
+- x Großer Punkt: Entwickler seitens des Kunden mit einbeziehen
+	- Daniel: Absolut, um Knowhow der Firma ins Team zu übertragen, und vom Team zurück in die Firma (Z. 379pp)
+	- (anonym): Hilfreich, da sie direkt verstehen, wie die PL aufgebaut wird und weniger Ablehnung, weil sie es selbst mitgestaltet haben (164pp)
+	- Niels: Keine Antwort
+	- Markus: Keine Antwort
+- Aus Sicht der Agenturen:
+	- Kunden/Stakeholder sind eine große Abhängigkeit (Niels, Z. 286pp; Markus, Z. 280pp)
+	- Ein UX-Designer im Team wäre hilfreich (Niels, Z. 535pp)
+	- Sprint läuft eigentlich nach agilen Prinzipien (Niels, Z. 
 
 ## Ergebnisse
 
-# Daniel Bogdoll, SAYM
+Im Folgenden werden die Ergebnisse der vier Interviews zusammengefasst. Die Transkriptionen der Interviews befinden sich sowohl im Anhang als auch online.[^28]
 
+Das Konzept der Component Sprints wurde in allen Interviews grundsätzlich positiv aufgenommen, jedoch wurden einige Punkte angesprochen, die noch optimiert werden können. Daniel sieht in dem Konzept Potential (Daniel, Z. 263pp) und würde in Zukunft gerne einen Component Sprint für SAYM durchführen (Daniel, Z. 442pp) und Markus erwähnte, dass der Sprint für die Entwicklung der eigenen Firmenwebsite interessant gewesen wäre (Markus, Z. 388pp). (anonym) sieht zwar persönlich keinen Mehrwert, da sie für das Zeichnen und Entwickeln von Prototypen und nicht für die Umsetzung der Produkte zuständig ist, kann sich die Sprints jedoch für ihr Unternehmen aus Perspektive der Entwicklungsteams gut vorstellen (anonym, Z. 232pp).
+
+Sowohl (anonym) als auch Niels hatten bereits mit Design Sprints gearbeitet und gute Erfahrungen damit gemacht (anonym, Z. 35p; Niels, Z. 40pp). Markus hat Design Sprints noch nicht verwendet, ist aber interessiert daran und hat sich mit der Methodik bereits auseinandergesetzt (Markus, Z. 164pp). Niels gefällt an Design Sprints besonders der kurze Zeitraum, in dem ein Sprint durchgeführt wird (Niels, Z. 46p) und dass er “[…] so kompakt ist und wirklich alle Phasen [der Ideation] durchläuft” (Niels, Z. 43p). (anonym) sieht Design Sprints als sinnvoll an, um schnell zu verstehen, wie Kunden eine Idee sehen könnten (anonym, Z. 39p), hinterfragte im Interview jedoch, wie repräsentativ die Testergebnisse mit nur fünf Nutzern sind (anonym, Z. 42pp).
+
+Keiner der vier Experten hat bisher mit einer Pattern Library gearbeitet.
+
+Allen interviewten Personen konnten sich als Zielgruppe der Component Sprints sowohl Startups als auch größere Unternehmen vorstellen (Daniel, Z. 364pp; anonym, Z. 235p; Niels, Z. 619pp; Markus, Z. 469pp). Markus fügte der Einschätzung hinzu, dass die Art der Produkte wichtiger sei als die Größe des Unternehmens. So sei der Component Sprint seiner Ansicht nach beispielsweise für Apps und Web-Apps besser geeignet als für Websites, da sich bei Websites nicht so viele Elemente wiederholen wie in Apps (Markus, Z. 466pp).
+
+Ein wichtiger Punkt, der sowohl von Daniel als auch von (anonym) und Niels angesprochen wurde, ist das Einbeziehen von Entwicklern und anderen Mitarbeitern wie z.B. UX-Designern seitens des Kunden in den Component Sprint. Diese Mitarbeiter können ihr Knowhow gut in die Entwicklung der Komponenten einbringen und neues, im Component Sprint erworbenes Wissen im Gegenzug wieder an ihr Team weitergeben (Daniel, Z. 379pp). Dazu könnte die Akzeptanz der Pattern Library gegenüber diesen Entwicklern steigen, da sie im Sprint die Möglichkeit haben, die Entwicklung mitzugestalten (anonym, Z. 170pp). UX-Designer könnten in der Entwicklung helfen, wenn beispielsweise bestimmte Zustände von Komponenten noch nicht visuell definiert sind, da sie bereits Wissen über das Branding des Kunden und einen besseren Blick für Design haben (Niels, Z. 568pp).
+
+Bei der Annahme, dass ein Component Sprint zwischen dem Design Sprint und der Entwicklung des MVPs stattfinden sollte, gingen die Meinungen der Interviewten Personen auseinander. So schlug Daniel vor, den Sprint nach der Entwicklung des MVPs und vor der Entwicklung des finalen Produktes anzusetzen, da MVPs meist wenige wiederverwendbare Elemente enthalten und nach der Testphase im Optimalfall verworfen würden, sodass die Entwicklung der Pattern Library so keinen Nachhaltigen Wert liefere (Daniel, Z. 266pp). 
+
+Niels würde den Component Sprint vor der Entwicklung des MVPs durchführen, sieht aber einen zwischengeschobenen Iteration Sprint[^29] als wichtig an, um den Prototyp mithilfe des im Design Sprint gesammelten Feedbacks zu überarbeiten (Niels, Z. 241pp). Als Startup, das “relativ schnell mit einem MVP […] an den Markt gehen muss” biete es sich jedoch an, den Component Sprint hinter die Entwicklung des MVPs zu schieben (Niels, Z. 384p). 
+
+(anonym) sah aus der Perspektive ihres Unternehmens mehr Wert darin, den Component Sprint einmalig für das Branding des gesamten Unternehmens anstatt nur für ein Produkt durchzuführen, sodass alle Teams bei der Entwicklung von neuen Projekten auf die selbe Pattern Library zugreifen können (anonym, Z. 226pp).
 
 # Weiteres Vorgehen
 # Fazit / Zukünftige Ausbaumöglichkeiten
@@ -497,3 +568,13 @@ Es werden nicht alle Fragen auf alle Experten zutreffen, sodass manche Fragen je
 [^23]:	[https://percy.io/](https://percy.io/)
 
 [^24]:	[https://www.chromaticqa.com](https://www.chromaticqa.com)
+
+[^25]:	[https://saym.io/](https://saym.io/)
+
+[^26]:	[https://www.nexum.de](https://www.nexum.de)
+
+[^27]:	[https://www.duplexmedia.com/](https://www.duplexmedia.com/)
+
+[^28]:	[https://github.com/leolabs/bachelor/tree/master/src/interviews](https://github.com/leolabs/bachelor/tree/master/src/interviews)
+
+[^29]:	Iteration Sprints dauern vier Tage und folgen ähnlichen Prinzipien wie Design Sprints, verwenden jedoch andere Methoden, um den Prototyp zu überarbeiten. Essentiell wird Nutzerfeedback in umsetzbare Änderungen zusammengefasst, diese werden in den Prototyp eingepflegt und erneut mit fünf Nutzern getestet [@ajsmartIteration2019].
