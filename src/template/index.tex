@@ -52,7 +52,7 @@
 \usepackage{mathrsfs} 	% Weitere Mathematik-Symbole, z.B. Laplace-L
 \usepackage{grffile}
 \usepackage{longtable,booktabs}
-\usepackage[nameinlink]{cleveref}
+\usepackage[nameinlink]{cleveref} % Links zu Abbildungen und Tabellen
 
 \usepackage{graphicx}		% Definiert o.a. \includegraphics
 \graphicspath{{../content.textbundle/}{.}}
@@ -65,6 +65,7 @@
 \usepackage{geometry} 		% Ränder direkt einstellen
 \geometry{a4paper, top=30mm, left=40mm, right=20mm, bottom=30mm} % nach Vorgabe
 \linespread{1.5} 		% Zeilenabstand nach Vorgabe
+\interfootnotelinepenalty=10000 % Don't split footnotes over multiple pages
 
 \usepackage[font=small,labelfont=bf]{caption}  % customization of captions of floating environments such figure and table
 \DeclareCaptionLabelFormat{blank}{}
@@ -135,9 +136,12 @@
 
 \pagenumbering{gobble}
 \tableofcontents
+\clearpage
 \pagenumbering{Roman}
+\input{glossary.tex}
 \listoffigures
 \listoftables
+\clearpage
 \setcounter{page}{1}
 \setcounter{savepage}{\arabic{page}}
 
