@@ -1,8 +1,17 @@
 # Einleitung
 
-# Motivation / Zielsetzung
+Die Methodik, die für die Entwicklung digitale digitaler Produkte genutzt wird, hat sich in den letzten 50 Jahren gewandelt. Die zeitlichen Anforderungen an Entwicklerteams nehmen zu und der Markt für Apps wächst stetig. So stieg beispielsweise die Anzahl der verfügbaren Apps im App Store von ca. 61.000 im Jahr 2009 auf über 4 Mio. im Jahr 2019 [@statistaApps2019]. Dazu nutzen im Jahr 2019 geschätzt 3,3 Mio. Menschen weltweit ein Smartphone [@statistaUsers2018]. Auf ProductHunt, einer Plattform, auf der Entwickler ihre digitalen Produkte vorstellen können, wurden von 2017-2019 über 19.000 Produkte veröffentlicht. Das sind ca. 614 Produkte pro Monat oder ca. 20 Produkte pro Tag (siehe @fig:productHuntMonthly).
 
-Ziel dieser Bachelorarbeit ist es, ein Konzept für einen Sprint zu entwickeln, der den Übergang vom Prototyp aus einem Design Sprint zum fertigen Minimum Viable Product optimal überbrückt.
+Methoden wie iterative und agile Softwareentwicklung, Scrum und Rapid Application Development (RAD) helfen Entwicklern dabei, effizienter zu arbeiten, auch wenn sich beispielsweise die Anforderungen an das Produkt häufig ändern [@larman2004agile, S. 27]. Minimum Viable Products (MVPs) werden dazu eingesetzt, das Potential eines Produktes zu testen, ohne zu viel zeit in die Entwicklung dieses zu investieren [@ries2009]. So können Produkte schneller an den Markt gebracht werden.
+
+Für die Ausarbeitung von Ideen werden Methoden wie Design Sprints und Design Thinking eingesetzt. Vor allem Design Sprints haben das Ziel, in einer möglichst kurzen Zeit Ergebnisse zu erzielen [@poguntke2019, S. 37]. Bei Design Sprints, die von Crisp Studio, einer Design Sprint Agentur aus Aachen, durchgeführt wurden, hat sich diese Methode bewährt, jedoch verlor die Entwicklung des Produkts nach dem Sprint bei Kunden schnell an Momentum. Dies beeinflusst den Mehrwert des Design Sprints negativ.
+
+Zwei große Aspekte der Effizienz von Design Sprints sind die genaue Struktur und das unabhängige Arbeiten an Aufgaben. Ist es möglich, diese Aspekte auf einen neuen Sprint zu übertragen, der auf den Design Sprint folgt und mit der selben Effizienz die Grundlage für die Entwicklung eines MVPs aufbauen kann?
+
+
+# Zielsetzung
+
+Ziel dieser Bachelorarbeit ist es, ein Konzept für einen Sprint zu entwickeln, der den Übergang vom Prototyp aus einem Design Sprint zum fertigen Minimum Viable Product (MVP) optimal überbrückt.
 
 Im Rahmen dieser Bachelorarbeit soll die folgende Frage beantwortet werden:
 
@@ -13,9 +22,9 @@ Im Rahmen dieser Bachelorarbeit soll die folgende Frage beantwortet werden:
 
 Design Sprints wurden 2012 von Jake Knapp entwickelt [@knapp2016, S. 5] und werden dazu eingesetzt, innerhalb von einer Woche eine Produktidee zu einem Prototyp auszuarbeiten und an potentiellen Nutzern zu testen. Design Sprints können für jede Art von Produkten – physisch und digital – eingesetzt werden [@knapp2016, S. 9]. Diese Arbeit konzentriert sich jedoch auf den Einsatz von Design Sprints im Softwarebereich, also beispielsweise für Apps und Websites.
 
-Nach einem erfolgreichen Design Sprint entwickeln Firmen häufig auf Basis des dort entwickelten Prototyps ein Minimum Viable Product, oder auch MVP, das sie auf den Markt bringen können [@dockyard2017].
+Nach einem erfolgreichen Design Sprint entwickeln Firmen häufig auf Basis des dort entwickelten Prototyps ein Minimum Viable Product, das sie auf den Markt bringen können [@dockyard2017].
 
-Der in dieser Bachelorarbeit ausgearbeitete Sprint, den ich Component Sprint nenne, soll Entwicklern die Implementierung des MVP vereinfachen, indem sie bereits alle nötigen UI-Komponenten in Form einer Pattern Library zur Verfügung gestellt bekommen. So können sie sich bei der Entwicklung des MVP mehr auf die Implementierung der Logik konzentrieren.
+Der in dieser Bachelorarbeit ausgearbeitete Sprint, der im Folgenden Component Sprint genannt wird, soll Entwicklern die Implementierung des MVP vereinfachen, indem sie bereits alle nötigen UI-Komponenten in Form einer Pattern Library zur Verfügung gestellt bekommen. So können sie sich bei der Entwicklung des MVP mehr auf die Implementierung der Logik konzentrieren.
 
 # Vorgehen
 
@@ -28,34 +37,33 @@ Um das Konzept weiter zu verfeinern, wird eine qualitative Studie in Form von vi
 Letztlich werden Schritte zur Weiterentwicklung des Konzepts angerissen und dargelegt, wie Component Sprints in Zukunft ausgebaut werden können.
 
 # Theoretische Grundlagen / Einordnung {#sec:grundlagen}
-## Prozess der Produktentwicklung
+
 In den letzten 20 Jahren hat sich der Prozess, in dem Software entwickelt und veröffentlicht bzw. verbreitet wird, stark verändert. Vor 20 Jahren wurde Software hauptsächlich auf CDs verkauft. Ein normaler Release-Zyklus lag bei mehreren Monaten. Bugs in der Software konnten erst in der nächsten Version behoben werden, Feedback von Benutzern konnte erst Monate später umgesetzt werden [@knapp2019, 4:06].
 
-Durch die Verbreitung des Internets wurde es einfacher, neue Versionen regelmäßiger zu veröffentlichen. Heute ist es normal, dass wöchentlich neue Updates für Software veröffentlicht werden. Analytics Tools wie Google Analytics[^1] und Mixpanel[^2] ermöglichen es Firmen, genaue Insights zum Benutzerverhalten in ihrer Software zu erlangen. So können potentielle Problemstellen in Programmen genauer identifiziert und behoben werden [@knapp2019, 14:23].
+Durch die Verbreitung des Internets wurde es einfacher, neue Versionen regelmäßiger zu veröffentlichen. Heute ist es normal, dass wöchentlich neue Updates für Software veröffentlicht werden. Analytics Tools wie Google Analytics[^1] und Mixpanel[^2] ermöglichen es Firmen, genaue Einblicke zum Benutzerverhalten in ihrer Software zu erlangen. So können potentielle Problemstellen in Programmen genauer identifiziert und behoben werden [@knapp2019, 14:23].
 
-Die folgenden Kapitel konzentrieren sich auf die heutige Entwicklung von Apps und Websites.
+Die folgenden Kapitel konzentrieren sich auf die heutige Entwicklung von Apps und Websites. Die vorgestellten Konzepte und Frameworks sind für die Entwicklung des Component Sprints relevant.
 
-## Auswahl relevanter Konzepte und Frameworks
 ## Design Sprints
 
-Ein normaler Zyklus in der heutigen Entwicklung von Apps und Websites kann in vier Schritte unterteilt werden:
+Ein normaler Zyklus in der heutigen Entwicklung von Apps und Websites kann in vier Schritte unterteilt werden (siehe @fig:leanCycle):
 
 - **Ideate:** Generierung und Ausarbeitung von Ideen
 - **Build:** Umsetzung der Ideen in Software
 - **Launch:** Veröffentlichung der Software auf dem Markt
 - **Data:** Sammeln von Insights und User Feedback
 
-![Klassischer Entwicklungszyklus nach Jake Knapp \[@knapp2018, S. 65\]](assets/DraggedImage.png) 
+![Klassischer Entwicklungszyklus nach Jake Knapp \[@knapp2018, S. 65\]](assets/DraggedImage.png){#fig:leanCycle}
 
 Bei der Entwicklung von Apps ist es normalerweise notwendig, diesen Zyklus mehrere Male zu durchlaufen, um eine optimale Version zu erhalten. Dabei ist vor allem der Build-Schritt zeitaufwändig. Wenn der Launch nicht erfolgreich ist, wurden diese Ressourcen verschwendet.
 
-![Design Sprint Zyklus \[@googleventures\]](assets/Design%20Sprint%20Cycle.jpg)
+![Design Sprint Zyklus \[@googleventures\]](assets/Design%20Sprint%20Cycle.jpg){#fig:sprintCycle}
 
-Der Design Sprint ist ein Ansatz, der diesen Zyklus optimiert. Hierbei werden die Build- und Launch-Schritte durch Prototyping und User Testing ersetzt, sodass User Feedback schneller gesammelt werden kann.
+Der Design Sprint ist ein Ansatz, der diesen Zyklus optimiert. Hierbei werden die Build- und Launch-Schritte durch Prototyping und User Testing ersetzt, sodass User Feedback schneller gesammelt werden kann (siehe @fig:sprintCycle).
 
-![Struktur des gesamten Design Sprints \[@knapp2016, S. 17\]](assets/Design%20Sprint%20Structure.jpg)
+![Struktur des gesamten Design Sprints \[@knapp2016, S. 17\]](assets/Design%20Sprint%20Structure.jpg){#fig:designSprintStructure}
 
-Ein Design Sprint dauert in der Regel fünf Tage – Montag bis Freitag – und wird vor Ort mit einem interdisziplinären Team von 4-7 Personen und einem Moderator durchgeführt. Die Tage sind zeitlich fest strukturiert und jegliche Form von Ablenkung, wie z.B. Handys oder Laptops, ist im Sprintraum nicht erlaubt. Ziel dieser Maßnahmen ist es, dass sich das Team fokussiert mit den Aufgaben auseinandersetzen kann [@knapp2016, S. 41]. Erarbeitete Informationen werden systematisch auf Post-its festgehalten, sodass jedes Teammitglied jederzeit darauf zugreifen kann [@knapp2016, p. 20].
+Ein Design Sprint dauert in der Regel fünf Tage – Montag bis Freitag, siehe @fig:designSprintStructure – und wird vor Ort mit einem interdisziplinären Team von 4-7 Personen und einem Moderator durchgeführt. Die Tage sind zeitlich fest strukturiert und jegliche Form von Ablenkung, wie z.B. Handys oder Laptops, ist im Sprintraum nicht erlaubt. Ziel dieser Maßnahmen ist es, dass sich das Team fokussiert mit den Aufgaben auseinandersetzen kann [@knapp2016, S. 41]. Erarbeitete Informationen werden systematisch auf Post-its festgehalten, sodass jedes Teammitglied jederzeit darauf zugreifen kann [@knapp2016, p. 20].
 
 Generell wird in Design Sprints auf offene Diskussionen verzichtet. Diese gelten als nicht effizient und geben Teilnehmern mit einer starken Meinung zu viel Gewichtung und Einfluss auf die Entscheidungen [@kahneman2013, K. 7]. Stattdessen werden Entscheidungen per Abstimmung, meist mit Hilfe von Klebepunkten, getroffen. Der CEO, Gründer, Produktmanager oder Head of Design hat als Decider in Abstimmungen eine größere Entscheidungskraft [@knapp2016, S. 34].
 
@@ -101,21 +109,21 @@ Nach den Interviews werden die Notizen sortiert und gruppiert, sodass sich darau
 
 Design Sprints werden von vielen Unternehmen nicht 100% so durchgeführt wie es in dem Buch *Sprint* des Erfinders Jake Knapp [@knapp2016] vorgeschlagen wird. Die Design Sprint Agentur AJ&Smart[^3] bietet beispielsweise einen Design Sprint in vier Tagen unter dem Namen “Design Sprint 2.0” an. Hier werden die ersten beiden Sprinttage in einen Tag zusammengeführt und die Übungen so angepasst, dass sie in der kürzeren Zeit durchgeführt werden können. So werden beispielsweise einzelne Experteninterviews in ein Gruppeninterview zusammengeführt, das auf 30 Minuten beschränkt ist [@smart2018].
 
-Bei Crisp Studio, einer Design Sprint Agentur aus Aachen[^4], orientieren wir uns am viertägigen Sprint von AJ&Smart. Dazu tauschen wir die Reihenfolge einiger Übungen, da sie so aus unserer Sicht mehr Sinn ergeben. Wir legen beispielsweise die Experteninterviews an den Anfang des ersten Sprinttages, sodass alle Teammitglieder bei den Sprintfragen und dem Langzeitziel bereits auf dem gleichen Stand sind. Zusätzlich enthalten unsere Sprints neue Übungen, wie z.B. Note-n-Map [siehe @cruchon2019], die den Prozess weiter vereinfachen. In unseren Design Sprints sind nicht alle Teammitglieder an allen vier Tagen anwesend. Die Teammitglieder des Kunden müssen hier nur an den ersten beiden Tagen teilnehmen. Dies vereinfacht die Organisation des Sprints erheblich, da unsere Kunden sich nicht eine ganze Woche freihalten müssen. Das Prototyping und Testing wird von der Agentur übernommen [@nauheimer2019].
+Crisp Studio, einer Design Sprint Agentur aus Aachen[^4], orientiert sich am viertägigen Sprint von AJ&Smart. Dazu wird die Reihenfolge einiger Übungen getauscht, da sie so aus Sicht des Unternehmens mehr Sinn ergeben. Die Experteninterviews werden beispielsweise an den Anfang des ersten Sprinttages gelegt, sodass alle Teammitglieder bei den Sprintfragen und dem Langzeitziel bereits auf dem gleichen Stand sind. Zusätzlich enthalten die Sprints neue Übungen, wie z.B. Note-n-Map [siehe @cruchon2019], die den Prozess weiter vereinfachen. In den Design Sprints von Crisp Studio sind nicht alle Teammitglieder an allen vier Tagen anwesend – die Teammitglieder des Kunden müssen hier nur an den ersten beiden Tagen teilnehmen. Dies vereinfacht die Organisation des Sprints erheblich, da die Kunden sich nicht eine ganze Woche freihalten müssen. Das Prototyping und Testing wird von der Agentur übernommen [@nauheimer2019].
 
 ## Prototyping
 
 Prototypen sind in ihrer Grundform im Duden als “[…] zur Erprobung und Weiterentwicklung bestimmte erste Ausführung […]“ definiert. Das Wort stammt vom Griechischen “prōtótypos”, übersetzt “ursprünglich”, ab [@dudenPrototyp]. Prototypen werden dazu eingesetzt, Ideen mit minimalem Aufwand zu testen. Prototyping bezeichnet die Erstellung eines solchen Prototypen.
 
-![Kategorisierung der Arten von Prototyping \[@verner, S. 7\]](assets/DraggedImage-3.png)
+![Kategorisierung der Arten von Prototyping \[@verner, S. 7\]](assets/DraggedImage-3.png){#fig:prototypingCategories}
 
-Im Kontext der Softwareentwicklung lässt sich Prototyping grob in drei Kategorien einteilen: Experimentelles, erforschendes und evolutionäres Prototyping [@verner, S. 7]. Diese Einteilung ist nicht absolut und die Begriffe variieren je nach hinzugezogener Quelle. So kann beispielsweise dem evolutionären Prototyping auch das Rapid Application Development (RAD) zugeordnet werden, das als Begriff erstmals 1988 von Barry Boehm [@boehm1988] im Kontext seines Spiral Models vorgestellt wurde. Dieser Begriff wurde jedoch auch durch das 1991 von James Martin vorgestellte Modell [@martin1991] geprägt, welches sich grundsätzlich von Boehms Modell unterscheidet. 
+Im Kontext der Softwareentwicklung lässt sich Prototyping grob in drei Kategorien einteilen (siehe @fig:prototypingCategories): Experimentelles, erforschendes und evolutionäres Prototyping [@verner, S. 7]. Diese Einteilung ist nicht absolut und die Begriffe variieren je nach hinzugezogener Quelle. So kann beispielsweise dem evolutionären Prototyping auch das Rapid Application Development (RAD) zugeordnet werden, das als Begriff erstmals 1988 von Barry Boehm [@boehm1988] im Kontext seines Spiral Models vorgestellt wurde. Dieser Begriff wurde jedoch auch durch das 1991 von James Martin vorgestellte Modell [@martin1991] geprägt, welches sich grundsätzlich von Boehms Modell unterscheidet. 
 
 Der Prototyping-Schritt in Design Sprints ist ein Rapid Throwaway Prototyping oder kurz Throwaway Prototyping, das sich dem erforschenden Prototyping unterordnen lässt. Bei diesem Ansatz werden Prototypen mit Fokus auf Geschwindigkeit entwickelt. Die Qualität des Programmcodes und die Sorgfältigkeit der Entwicklung sind dabei nicht vorrangig, da der Prototyp nach der Evaluation nicht weiterentwickelt, sondern verworfen wird [@crinnion1992, S. 18]. 
 
-![\[@knapp2016, S. 168\]](assets/DraggedImage-4.png)
+![\[@knapp2016, S. 168\]](assets/DraggedImage-4.png){#fig:prototypingChanges}
 
-Durch diese Grundlage fällt es dem Team meist leichter, Ideen zu verwerfen, da es so noch nicht zu viel Zeit in deren Entwicklung investiert hat [@knapp2016, S. 168].
+Durch diese Grundlage fällt es dem Team meist leichter, Ideen zu verwerfen, da es so noch nicht zu viel Zeit in deren Entwicklung investiert hat [@knapp2016, S. 168]. @fig:prototypingChanges stellt diesen Sachverhalt vereinfacht dar.
 
 ## Minimum Viable Products
 
@@ -134,17 +142,17 @@ Ries’ Definition hat aktuell jedoch die größte Reichweite. Die meisten Defin
 
 Atomic Design ist ein System zur hierarchischen Organisation und Strukturierung von UI Komponenten, das erstmals 2013 von Brad Frost auf seinem Blog vorgestellt und 2016 in dem Buch “Atomic Design” veröffentlicht wurde [@frost2016, Foreword].
 
-![Struktur des Atomic Designs \[@frost2016, K. 2\]](assets/atomic-design-abstract-concrete.png)
+![Struktur des Atomic Designs \[@frost2016, K. 2\]](assets/atomic-design-abstract-concrete.png){#fig:atomicStructure}
 
-Das in seinem Buch beschriebene System bezieht sich hauptsächlich auf die Entwicklung von Websites, lässt sich jedoch auch für jede andere Form von Benutzerinterfaces einsetzen. Atomic Design unterteilt die eingesetzten UI Elemente in Atome, Moleküle, Organismen, Templates und Seiten. Komponenten aus diesen Kategorien bauen jeweils auf Komponenten aus der vorherigen Kategorie auf [@frost2016, K. 2].
+Das in seinem Buch beschriebene System bezieht sich hauptsächlich auf die Entwicklung von Websites, lässt sich jedoch auch für jede andere Form von Benutzerinterfaces einsetzen. Atomic Design unterteilt die eingesetzten UI Elemente in Atome, Moleküle, Organismen, Templates und Seiten (siehe @fig:atomicStructure). Komponenten aus diesen Kategorien bauen jeweils auf Komponenten aus der vorherigen Kategorie auf [@frost2016, K. 2].
 
 Atome sind im Atomic Design die kleinste Einheit der Komponenten und können nicht weiter in kleinere Teile zerlegt werden. Gültige Atome sind beispielsweise Buttons, Eingabefelder, Labels, Überschriften und alle Elemente, die sich durch einen HTML Tag darstellen lassen [@frost2016, K. 2].
 
 Moleküle bauen auf diesen Atomen auf und kombinieren diese zu Einheiten, die einen bestimmten Zweck erfüllen. So könnte ein Molekül “Suchfeld” beispielsweise aus den Atomen “Button” und “Eingabefeld” bestehen. Dieses Molekül kann nun überall verwendet werden, wo ein Suchfeld benötigt wird [@frost2016, K. 2].
 
-Organismen sind komplexe Komponenten, die aus mehreren Atomen, Molekülen und anderen Organismen bestehen. Ein gültiges Molekül ist beispielsweise ein Header. Dieser könnte aus einem Logo-Atom, einem Menü-Molekül und einem Suchfeld-Molekül bestehen [@frost2016, K. 2].
+Organismen sind komplexe Komponenten, die aus mehreren Atomen, Molekülen und anderen Organismen bestehen. Ein gültiges Molekül ist beispielsweise ein Header, so wie er in @fig:atomicHeader abgebildet ist. Dieser könnte aus einem Logo-Atom, einem Menü-Molekül und einem Suchfeld-Molekül bestehen [@frost2016, K. 2].
 
-![Header-Organismus \[@frost2016, K. 2\]](assets/atomic-header.png)
+![Header-Organismus \[@frost2016, K. 2\]](assets/atomic-header.png){#fig:atomicHeader}
 
 Templates bestehen aus mehreren Organismen und definieren das Layout in dem diese auf der Seite angeordnet werden sollen. Templates sind unabhängig von Inhalten und verwenden Platzhalter, um die Inhaltsstruktur zu definieren [@frost2016, K. 2].
 
@@ -190,7 +198,7 @@ Voraussetzung für einen Component Sprint ist ein validierter Prototyp, der bere
 
 Angelehnt an den Zeitrahmen von Design Sprints sollte ein Component Sprint in einem Zeitraum von vier bis fünf Tagen erfolgen. Aus persönlicher Erfahrung als Entwickler dürfte dieser Zeitraum für die Implementierung der Pattern Library ausreichen. Diese Hypothese wird im empirischen Test des Component Sprints überprüft.
 
-Strukturell orientiert sich die Pattern Library des Component Sprints an einem Hybrid aus Atomic Design und Design Systems. Die Komponenten der Pattern Library sind in Atome, Moleküle und Templates unterteilt, wobei ein Molekül ausschließlich aus Atomen und nicht aus anderen Molekülen bestehen darf um die Komplexität der Struktur zu limitieren. Design Systems schließt die Unterteilung der Komponenten nicht explizit aus und die Hierarchie soll Entwicklern während des Sprints helfen, die einzelnen Komponenten zu priorisieren, sodass keine Abhängigkeitsprobleme entstehen.
+Strukturell orientiert sich die Pattern Library des Component Sprints an einem Hybrid aus Atomic Design und Design Systems. Die Komponenten der Pattern Library sind in Atome, Moleküle und Templates unterteilt, wobei ein Molekül ausschließlich aus Atomen und nicht aus anderen Molekülen bestehen darf um die Komplexität der Struktur zu limitieren. Organismen und Seiten werden aus dem selben Grund aus der Struktur der Pattern Library ausgeschlossen. Design Systems schließt die Unterteilung der Komponenten nicht explizit aus und die Hierarchie soll Entwicklern während des Sprints helfen, die einzelnen Komponenten zu priorisieren, sodass keine Abhängigkeitsprobleme entstehen.
 
 Um einem Unternehmen einen nachhaltigen Wert zu liefern, sollte das Ergebnis eines Component Sprints gut dokumentiert sein und seitens des Unternehmens einfach genutzt und um neue Komponenten erweitert werden können. Um dies zu erreichen, ist ein gutes Handoff des Sprint Teams an das Unternehmen wichtig.
 
@@ -198,9 +206,9 @@ Genau wie ein Design Sprint, kann ein Component Sprint sowohl innerhalb eines Un
 
 Das Sprint Team sollte für optimale Produktivität insgesamt aus maximal zehn Personen bestehen [@brooks1995, p. 31; @coplien1994, p. 7]. Je nach Komplexität des Produkts und damit der Anzahl an Komponenten dürfte ein Team von mindestens drei Personen jedoch auch ausreichen. Auch diese Hypothese wird im empirischen Test überprüft.
 
-![Die Benutzeroberfläche von Storybook](assets/wevent-components.netlify.com__path=_story_molecules-form--multiple%20(1).png)
+![Die Benutzeroberfläche von Storybook](assets/wevent-components.netlify.com__path=_story_molecules-form--multiple%20(1).png){#fig:storybookUi}
 
-Als Basis für die Pattern Library kann Storybook[^11] verwendet werden. Storybook ist ein kostenloses, offenes Framework, das mit beliebten Web Libraries wie React[^12], Vue[^13] und Angular[^14] zusammenspielt. Storybook ermöglicht Entwicklern, Komponenten zu implementieren, zu dokumentieren und zu testen. Die Komponenten werden den Nutzern automatisch in einer übersichtlichen Benutzeroberfläche in allen möglichen Variationen zusammen mit Codebeispielen angezeigt [@storybook].
+Als Basis für die Pattern Library kann Storybook[^11] verwendet werden. Storybook ist ein kostenloses, offenes Framework, das mit beliebten Web Libraries wie React[^12], Vue[^13] und Angular[^14] zusammenspielt. Storybook ermöglicht Entwicklern, Komponenten zu implementieren, zu dokumentieren und zu testen. Die Komponenten werden den Nutzern automatisch in einer übersichtlichen Benutzeroberfläche (siehe @fig:storybookUi) in allen möglichen Variationen zusammen mit Codebeispielen angezeigt [@storybook].
 
 Um die Zusammenarbeit zwischen den Teammitgliedern zu vereinfachen, bietet sich Versionsverwaltungssoftware wie beispielsweise Git[^15] an. Diese Software erlaubt es mehreren Entwicklern, parallel an dem selben Projekt zu arbeiten. Änderungen werden in Form von sogenannten Commits gespeichert und mit anderen Entwicklern oder einem zentralen Server synchronisiert [@gitbook K. 1.1]. Als zentrale Platform für Git bieten sich GitHub[^16], GitLab[^17] oder BitBucket[^18] an.
 
@@ -248,9 +256,9 @@ Die Zeiten der Implementierung der Komponenten werden anhand der Commit Logs auf
 
 Der Design Sprint begann am Montag der ersten Projektwoche nach Aufbau des Sprintraums und kurzer Einleitung mit einem Experteninterview. Hier beschrieb der Decider die Problemstellung und die Idee der App Wevent. Wichtige Punkte aus dem Gespräch wurden in Form von “How might we”-Fragen auf Post-its festgehalten und im Anschluss an das Gespräch in die Kategorien *Onboarding*, *Information*, *Ausrichtung* und *Misc* unterteilt. Über diese Fragen wurde nun abgestimmt. Jeder Teilnehmer bekam dafür zwei Stimmen in Form von Klebepunkten, der Decider vier.
 
-![Sprintziel und Sprintfrage](assets/sprint-question-can-we.jpg)
+![Sprintziel und Sprintfrage](assets/sprint-question-can-we.jpg){#fig:sprintQuestion}
 
-Im Anschluss wurden Langzeitziele der App sowie mehrere Sprintfragen vorgeschlagen. Mithilfe von Klebepunkten wurde jeweils über den passendsten Vorschlag abgestimmt. Das Langzeitziel des Sprints wurde auf “In two years’ time, it will be a fun, delightful, and smooth process to organize an event” festgelegt. Die Sprintfrage lautete: “Can we compete against traditional/alternative ways to organize events?”.
+Im Anschluss wurden Langzeitziele der App sowie mehrere Sprintfragen vorgeschlagen. Mithilfe von Klebepunkten wurde jeweils über den passendsten Vorschlag abgestimmt. Das Langzeitziel des Sprints wurde auf “In two years’ time, it will be a fun, delightful, and smooth process to organize an event” festgelegt. Die Sprintfrage lautete: “Can we compete against traditional/alternative ways to organize events?” (siehe @fig:sprintQuestion).
 
 ![Einzelne Schritte im User-Flow (ein Flow pro Zeile)](assets/sprint-user-flows.jpg){#fig:userFlow}
 
@@ -258,9 +266,9 @@ Im Anschluss wurden Langzeitziele der App sowie mehrere Sprintfragen vorgeschlag
 
 Um herauszufinden, welcher Bereich der App-Idee im Fokus des Sprints stehen sollte, legte jedes Teammitglied einen User-Flow in maximal acht Schritten an, den ein potentieller Benutzer durchlaufen könnte (siehe @fig:userFlow). Diese Schritte wurden als Grundlage genutzt, um eine Map zu erstellen, die den Flow in drei Phasen – *Discover*, *Learn* und *Use* – unterteilt. Nach gemeinsamer Absprache wurde der Fokusbereich auf das Erstellen und Teilen eines Events und auf den Check-In für Gäste festgelegt (siehe @fig:sprintMap). Dem Fokusbereich wurden relevante “How might we”-Fragen zugeordnet.
 
-![Ergebnis der Lightning Demos](assets/sprint-lightning-demos.jpg)
+![Ergebnis der Lightning Demos](assets/sprint-lightning-demos.jpg){#fig:lightningPostIts}
 
-Am Nachmittag wurden zur UI-Inspiration Ideen aus bestehenden Websites gesammelt und in Lightning Demos vorgestellt. Die Ergebnisse wurden in Form von Post-its festgehalten.
+Am Nachmittag wurden zur UI-Inspiration Ideen aus bestehenden Websites gesammelt und in Lightning Demos vorgestellt. Die Ergebnisse wurden in Form von Post-its festgehalten (siehe @fig:lightningPostIts).
 
 ![3-Part-Sketches](assets/sprint-storyboards.png){#fig:sketches}
 
@@ -334,7 +342,7 @@ Basierend auf diesen Daten und mit der Annahme, dass die Arbeitsleistung proport
 
 ## Erkenntnisse
 
-Die folgenden Learnings wurden in der Retrospektive am Ende des Component Sprints gesammelt.
+Die folgenden Erkenntnisse wurden in der Retrospektive am Ende des Component Sprints gesammelt.
 
 Das Tooling des Component Sprints mit Storybook, React und Linaria wurde positiv wahrgenommen. In Zukunft wäre es einfach, die Pattern Library des Component Sprints um UI Testing bzw. Visual Diffing zu erweitern, um sicherzustellen, dass alle Komponenten auch nach möglichen Änderungen gegebene Grundvoraussetzungen erfüllen und sich das Aussehen nur kontrolliert verändert. Hierzu eignen sich Dienste wie Percy[^28] oder Chromatic[^29], die sich in Storybook integrieren lassen und dieses Testing automatisieren können.
 
@@ -352,13 +360,13 @@ Zusammengefasst war das gesamte Sprint Team mit dem Component Sprint zufrieden, 
 
 # Qualitative Studie zur Verfeinerung des Konzepts
 
-## Studiendesign
-
 Um das Konzept der Component Sprints weiter auszuarbeiten, bietet sich eine qualitative Studie in Form von Experteninterviews mit Personen aus digitalen Firmen verschiedener Größen an.
 
 Diese Experteninterviews bieten qualitative Einblicke in das Wissen der Experten und deren Sicht auf bestimmte Situationen [@glaeser2010, S. 13], in diesem konkreten Fall auf die Arbeitsumgebung, die Arbeitsweisen und die Anforderungen in ihrem Unternehmen.
 
-Der Begriff “‘Experte’ beschreibt [hierbei] die spezifische Rolle des Interviewpartners als Quelle von Spezialwissen über die zu erfor­schenden […] Sachverhalte.” [@glaeser2010, S. 12]
+Der Begriff “‘Experte’ beschreibt [hierbei] die spezifische Rolle des Interviewpartners als Quelle von Spezialwissen über die zu erfor­schenden […] Sachverhalte.” [@glaeser2010, S. 12].
+
+## Studiendesign
 
 Insgesamt werden vier Interviews durchgeführt – zwei davon mit Personen aus Agenturen, die digitale Projekte für andere Firmen konzipieren und umsetzen und zwei mit Personen, die aktiv an eigenen Produkten arbeiten. Die Firmengröße reicht hierbei von einem Startup mit fünf Mitarbeitern [@saym2019] bis hin zu einem Großunternehmen mit über 50000 Mitarbeitern (anonym).
 
@@ -444,7 +452,9 @@ Damit könnten beispielsweise folgende Fragen beantwortet werden, die sich aus d
 - Inwiefern können Entwickler und Designer aus Kundenseite mit in die Entwicklung einbezogen werden und welche Auswirkungen hat dies auf das Ergebnis?
 - Wie kann die Abhängigkeit von mehreren Stakeholdern im Sprint gut bewältigt werden und wie kann sichergestellt werden, dass alle benötigten Informationen zum Beginn des Component Sprints verfügbar sind?
 
-Zusätzlich dazu sollte die Nachhaltigkeit des Ergebnisses geprüft werden, indem die im Sprint entwickelte Pattern Library über einen längeren Zeitraum, beispielsweise über ein Jahr, im Entwicklerteam eingesetzt wird.
+Zusätzlich dazu sollte die Nachhaltigkeit des Ergebnisses geprüft werden, indem die im Sprint entwickelte Pattern Library über einen längeren Zeitraum, beispielsweise über ein Jahr, im Entwicklerteam eingesetzt wird. Hier ist es wichtig, dass die Pattern Library nicht nur genutzt, sondern vom Entwicklerteam gepflegt wird. Ist dies nicht der Fall, könnte es vorkommen, dass sie nicht mehr ordentlich genutzt wird. Dadurch verliert sie ihren Wert, so wie es bei sipgates Pattern Library der Fall war.
+
+Bei Crisp Studio wurde im Zeitraum dieser Arbeit bereits ein weiterer Component Sprint für nextAudit[^34] durchgeführt, in dem der Inhalt des ersten Sprinttages auf eine Woche vor dem Sprint verlegt wurde. So stand mehr Zeit für die Rücksprache mit Stakeholdern und mehr Zeit zur Entwicklung während des Sprints zur Verfügung. Das Feedback seitens nextAudit war positiv, sodass es sich anbieten würde, diese Strukturänderung weiter zu verfolgen und zu testen.
 
 Diese Tests sprengen den Rahmen dieser Bachelorarbeit, könnten jedoch das Thema einer weiteren Bachelorarbeit sein oder unternehmensintern durchgeführt werden.
 
@@ -497,6 +507,48 @@ Das ausgearbeitete Konzept ist nur eine von wahrscheinlich mehreren Lösungen zu
 | Share            | Template | Leo    | 3:06:00 | 3       |
 
 : Aufgeschlüsselte Entwicklungszeiten der einzelnen Komponenten {#tbl:componentTimesDetailed}
+
+![Anzahl der Produkte auf ProductHunt pro Monat (2017-2019)](assets/producthunt-posts-per-month.png){#fig:productHuntMonthly}
+
+| Month      | Number of submitted products |
+|------------|-----------------------------:|
+| 2017-02-01 |                          596 |
+| 2017-03-01 |                          658 |
+| 2017-04-01 |                          538 |
+| 2017-05-01 |                          583 |
+| 2017-06-01 |                          565 |
+| 2017-07-01 |                          573 |
+| 2017-08-01 |                          641 |
+| 2017-09-01 |                          638 |
+| 2017-10-01 |                          674 |
+| 2017-11-01 |                          665 |
+| 2017-12-01 |                          588 |
+| 2018-01-01 |                          580 |
+| 2018-02-01 |                          660 |
+| 2018-03-01 |                          604 |
+| 2018-04-01 |                          566 |
+| 2018-05-01 |                          701 |
+| 2018-06-01 |                          612 |
+| 2018-07-01 |                          611 |
+| 2018-08-01 |                          656 |
+| 2018-09-01 |                          590 |
+| 2018-10-01 |                          702 |
+| 2018-11-01 |                          624 |
+| 2018-12-01 |                          512 |
+| 2019-01-01 |                          616 |
+| 2019-02-01 |                          642 |
+| 2019-03-01 |                          631 |
+| 2019-04-01 |                          679 |
+| 2019-05-01 |                          642 |
+| 2019-06-01 |                          540 |
+| 2019-07-01 |                          570 |
+| 2019-08-01 |                          591 |
+
+: Anzahl der Produkte auf ProductHunt pro Monat (2017-2019) für @fig:productHuntMonthly
+
+Die rohen Daten zu @fig:productHuntMonthly wurden mit einem Web Scraper von ProductHunt bezogen und mit Exploratory[^35] zu einer Grafik verarbeitet. Sie befinden sich zusammen mit dem Code des Scrapers auf dem beigelegten Datenspeicher und online.[^36]
+
+Die Transkripte der Interviews befinden sich ebenfalls auf dem beigelegten Datenspeicher und online.[^37]
 
 [^1]:	[https://analytics.google.com](https://analytics.google.com)
 
@@ -563,3 +615,11 @@ Das ausgearbeitete Konzept ist nur eine von wahrscheinlich mehreren Lösungen zu
 [^32]:	[https://www.duplexmedia.com/](https://www.duplexmedia.com/)
 
 [^33]:	[https://github.com/leolabs/bachelor/tree/master/src/interviews](https://github.com/leolabs/bachelor/tree/master/src/interviews)
+
+[^34]:	[https://www.next-audit.de/](https://www.next-audit.de/)
+
+[^35]:	[https://exploratory.io/](https://exploratory.io/)
+
+[^36]:	[https://github.com/leolabs/bachelor/blob/master/crawlers/producthunt-crawler/results.json](https://github.com/leolabs/bachelor/blob/master/crawlers/producthunt-crawler/results.json)
+
+[^37]:	[https://github.com/leolabs/bachelor/tree/master/src/interviews](https://github.com/leolabs/bachelor/tree/master/src/interviews)
