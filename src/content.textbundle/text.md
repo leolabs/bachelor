@@ -100,7 +100,7 @@ Das Prototyping geschieht in Teamarbeit. So erstellen beispielsweise zwei Person
 
 Die Person, die am nächsten Tag die Interviews mit Testnutzern durchführen wird, konzipiert während des Prototypings ein Skript, mit dem die Nutzer durch den Prototypen geführt werden sollen [@knapp2016, S. 171].
 
-Am Freitag wird der Prototyp an fünf Nutzern getestet. Nach einer kurzen Einleitung und generellen Fragen zum Nutzer wird dieser durch den Prototyp geführt. Die interviewende Person versichert dem Nutzer dabei, dass nicht er, sondern das Produkt getestet wird. Er kann daher nichts falsch machen und es wird nicht vorausgesetzt, dass er alle Aufgaben verstehen oder ausführen kann. [@knapp2016, S. 207]
+Am Freitag wird der Prototyp an fünf Nutzern getestet. Nach einer kurzen Einleitung und generellen Fragen zum Nutzer wird dieser durch den Prototyp geführt. Die interviewende Person versichert dem Nutzer dabei, dass nicht er, sondern das Produkt getestet wird. Er kann daher nichts falsch machen und es wird nicht vorausgesetzt, dass er alle Aufgaben verstehen oder ausführen kann [@knapp2016, S. 207].
 
 ![Aufbau der Interviews \[@knapp2016, S. 203\]](assets/DraggedImage-2.png)
 
